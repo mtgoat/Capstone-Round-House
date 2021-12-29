@@ -1,0 +1,17 @@
+body {
+    background-color: bisque;
+}
+
+.form--Regi {
+    padding:4em 1em 1em 1em;
+    margin: 2em;
+    border: rgb(104, 159, 161) solid 0.1rem;
+    border-radius: 2em;
+}
+
+.form--login {
+    padding:1em;
+    margin: 2em;
+    border: rgb(104, 159, 161) solid 0.1rem;
+    border-radius: 2em;
+}
