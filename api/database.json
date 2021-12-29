@@ -1,58 +1,64 @@
 {
-    "users":[
+  "customers": [
     {
-        "id": 1,
-        "firstName": "Squirrel",
-        "lastName": "Walnut",
-        "email": "squirrel@walnut.com"
-    }
-    ],
-    "situations":[
-    {
-        "id":1,
-        "name":"Short-term medical care situation"
+      "id": 1,
+      "firstName": "Squirrel",
+      "lastName": "Walnut",
+      "email": "squirrel@walnut.com"
     },
     {
-        "id":2,
-        "name":"Long-term medical care situation"
+      "email": "cat@fish.com",
+      "firstName": "Cat",
+      "lastName": "Fish",
+      "id": 2
+    }
+  ],
+  "situations": [
+    {
+      "id": 1,
+      "name": "Short-term medical care situation"
     },
     {
-        "id":3,
-        "name":"Incapaciated medical care situation"
+      "id": 2,
+      "name": "Long-term medical care situation"
     },
     {
-        "id":4,
-        "name":"Other"
-    }
-    ],
-    "categories":[
-        {
-            "id":1,
-            "name": "medical"
-        },
-        {
-            "id":2,
-            "name": "financial"
-        },
-        {
-            "id":3,
-            "name": "legal"
-        },
-        {
-            "id":4,
-            "name": "other"
-        }
-    ],
-    "documents":[
+      "id": 3,
+      "name": "Incapaciated medical care situation"
+    },
     {
-        "id": 1,
-        "name": "Living Will",
-        "isPaper": true,
-        "access":"in the filing cabinet",
-        "note":"please look under healthcare proxy", 
-        "userId":1, 
-        "situationId":2,
-        "categoryId":3
+      "id": 4,
+      "name": "Other"
     }
-    ]
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "medical"
+    },
+    {
+      "id": 2,
+      "name": "financial"
+    },
+    {
+      "id": 3,
+      "name": "legal"
+    },
+    {
+      "id": 4,
+      "name": "other"
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "name": "Living Will",
+      "isPaper": true,
+      "access": "in the filing cabinet",
+      "note": "please look under healthcare proxy",
+      "userId": 1,
+      "situationId": 2,
+      "categoryId": 3
+    }
+  ]
 }
