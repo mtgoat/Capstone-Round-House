@@ -1,27 +1,68 @@
-import React, { useContext,useEffect } from "react";
-import { CustomerContext } from "./customers/CustomerProvider";
+import React from "react";
+import "./Home.css";
+import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
+import { DocumentList } from "./documents/DocumentList";
 
-function Welcome (props) {
-    return <p> Welcome, {props.firstName}</p>
-}
 
 export const Home = () => {
-    const { customers, getCustomers } = useContext(CustomerContext)
-    useEffect(() => {
-        console.log("users", customers)
-        getCustomers()
-    
-      }, [])
-   return ( 
-     <>
-    
-    <aside>
-        <Welcome name={customers.find(user => user.id === +localStorage.activeUser)}/>
-       
-    </aside>
 
-    </>
+   return ( 
+    <Container>
+            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Row>
+                <Col sm={3}>
+                <Nav variant="pills" className="flex-column">
+                    <Nav.Item>
+                    <Nav.Link eventKey="all">All Added Documents</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                    <Nav.Link eventKey="short">Short-Term Medical Care Situation</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                    <Nav.Link eventKey="long">Long-Term Medical Care Situation</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                    <Nav.Link eventKey="incapacited">Incapacited Medical Care Situation</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                    <Nav.Link eventKey="other">Other Situation</Nav.Link>
+                    </Nav.Item>
+
+                </Nav>
+                </Col>
+                <Col sm={9}>
+                <Tab.Content>
+                    <Tab.Pane eventKey="all">
+                    <DocumentList />
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="short">
+                    <DocumentList id={1}/>
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="long">
+                    <DocumentList id={2}/>
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="incapacited">
+                    <DocumentList id={3}/>
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="other">
+                    <DocumentList id={4}/>
+                    </Tab.Pane>
+
+                </Tab.Content>
+                </Col>
+            </Row>
+            </Tab.Container>
+
+    </Container>
    )
 }
 

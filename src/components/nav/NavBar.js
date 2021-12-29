@@ -10,12 +10,11 @@ class NavBar extends Component{
       <Navbar bg="dark" variant="dark">
             <Container>
             
-              <Navbar.Brand href="home">Round House| Home</Navbar.Brand>
+              <Navbar.Brand href="#home">Round House| Home</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#lists">All Documents List</Nav.Link>
                     <Nav.Link href="#newDoc">Add New Document</Nav.Link>
                     <Nav.Link href="#search">Search</Nav.Link>
                     </Nav>

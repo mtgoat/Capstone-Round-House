@@ -14,7 +14,7 @@ export const Logout = (props) =>{
 
         localStorage.removeItem("activeUser")
                 
-        navigate("/login") 
+        navigate("/") 
         window.location.reload(false);
         }
 

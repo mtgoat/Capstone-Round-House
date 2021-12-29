@@ -1,23 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import  NavBar  from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
 import "./RoundHouse.css";
 import { Routes, Route, Navigate } from "react-router";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
-import { Logout} from "./components/auth/Logout";
+import { CustomerContext } from "./components/customers/CustomerProvider";
 
 export const RoundHouse = () => {
     const [loggedin, setLoggedin] = useState(false);
 
     const changeState = (bool) => setLoggedin(bool);
 
-    if (localStorage.getItem("activeUser")){
+      if (localStorage.getItem("activeUser")){
         return (
             <>
                 <NavBar />
                 <ApplicationViews />
-                <Logout />
                 
             </>
         );
