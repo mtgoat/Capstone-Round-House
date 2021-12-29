@@ -1,59 +1,66 @@
-import React, { useContext,useEffect } from "react";
-import { CustomerContext } from "./customers/CustomerProvider";
+import React from "react";
 import "./Home.css";
-import { Accordion, Container, Row, Col } from "react-bootstrap";
+import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
-function Welcome (props) {
-    return <p> Welcome, {props.firstName}</p>
-}
+import { DocumentList } from "./documents/DocumentList";
+
 
 export const Home = () => {
-    const { customers, getCustomers } = useContext(CustomerContext)
-    useEffect(() => {
-        console.log("users", customers)
-        getCustomers()
-    
-      }, [])
+
    return ( 
-     <Container>
-     <Row>
-        <Col className="aside-left" sm={4}>
-            <Welcome  name={customers.find(user => user.id === +localStorage.activeUser)}/>
-        </Col>
+    <Container>
+            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Row>
+                <Col sm={3}>
+                <Nav variant="pills" className="flex-column">
+                    <Nav.Item>
+                    <Nav.Link eventKey="all">All Added Documents</Nav.Link>
+                    </Nav.Item>
 
+                    <Nav.Item>
+                    <Nav.Link eventKey="short">Short-Term Medical Care Situation</Nav.Link>
+                    </Nav.Item>
 
+                    <Nav.Item>
+                    <Nav.Link eventKey="long">Long-Term Medical Care Situation</Nav.Link>
+                    </Nav.Item>
 
-     <Accordion as={Col} sm={8} defaultActiveKey="0" flush column>
+                    <Nav.Item>
+                    <Nav.Link eventKey="incapacited">Incapacited Medical Care Situation</Nav.Link>
+                    </Nav.Item>
 
-        <Accordion.Item eventKey="0">
-            <Accordion.Header>#1 Short-Term Medical Situation</Accordion.Header>
-                <Accordion.Body>
-                  List from document API 
-                </Accordion.Body>
-        </Accordion.Item>
+                    <Nav.Item>
+                    <Nav.Link eventKey="other">Other Situation</Nav.Link>
+                    </Nav.Item>
 
-        <Accordion.Item eventKey="1">
-            <Accordion.Header>#2 Long-Term Medical Situation</Accordion.Header>
-                <Accordion.Body>
-                List from document API 
-                </Accordion.Body>
-            </Accordion.Item>
+                </Nav>
+                </Col>
+                <Col sm={9}>
+                <Tab.Content>
+                    <Tab.Pane eventKey="all">
+                    <DocumentList />
+                    </Tab.Pane>
 
-            <Accordion.Item eventKey="2">
-            <Accordion.Header>#3 Incapaciated Medical Situation</Accordion.Header>
-                <Accordion.Body>
-                List from document API 
-                </Accordion.Body>
-            </Accordion.Item>
+                    <Tab.Pane eventKey="short">
+                    <DocumentList id={1}/>
+                    </Tab.Pane>
 
-            <Accordion.Item eventKey="3">
-            <Accordion.Header>#4 Other Situation</Accordion.Header>
-                <Accordion.Body>
-                List from document API 
-                </Accordion.Body>
-            </Accordion.Item>
-    </Accordion> 
-    </Row>
+                    <Tab.Pane eventKey="long">
+                    <DocumentList id={2}/>
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="incapacited">
+                    <DocumentList id={3}/>
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="other">
+                    <DocumentList id={4}/>
+                    </Tab.Pane>
+
+                </Tab.Content>
+                </Col>
+            </Row>
+            </Tab.Container>
 
     </Container>
    )

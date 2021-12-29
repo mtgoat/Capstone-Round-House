@@ -1,27 +1,27 @@
 import React, { useState, createContext } from "react";
 
 // The context is imported and used by individual components that need data
-export const CustomerContext = createContext()
+export const DocumentContext = createContext()
 
 // This component establishes what data can be used.
-export const CustomerProvider = (props) => {
-    const [customers, setCustomers] = useState([])
+export const DocumentProvider = (props) => {
+    const [documents, setDocuments] = useState([])
 
-    const getCustomers = () => {
-        return fetch("http://localhost:8088/customers")
+    const getDocuments = () => {
+        return fetch("http://localhost:8088/documents?_expand=situation&_expand=category")
         .then(res =>  res.json())
-        .then(setCustomers)
+        .then(setDocuments)
     }
 
-    const addCustomer = customerObj => {
-        return fetch("http://localhost:8088/customers", {
+    const addDocument =  documentObj => {
+        return fetch("http://localhost:8088/documents", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(customerObj)
+            body: JSON.stringify(documentObj)
         })
-        .then(getCustomers)
+        .then(getDocuments)
     }
 
     /*
@@ -31,10 +31,10 @@ export const CustomerProvider = (props) => {
         allows any child elements to access them.
     */
     return (
-        <CustomerContext.Provider value={{
-            customers, getCustomers, addCustomer
+        <DocumentContext.Provider value={{
+            documents, getDocuments, addDocument
         }}>
             {props.children}
-        </CustomerContext.Provider>
+        </DocumentContext.Provider>
     )
 }
