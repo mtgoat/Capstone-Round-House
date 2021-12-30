@@ -41,7 +41,7 @@ export const Login = (props) => {
 
             <section>
                 <div as={Row}>
-                <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/>
+                {/* <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
                 <Col sm="10">
                 <h1 >Round House</h1>
                 </Col>

@@ -35,6 +35,7 @@ export const Home = () => {
 
                 </Nav>
                 </Col>
+
                 <Col sm={9}>
                 <Tab.Content>
                     <Tab.Pane eventKey="all">

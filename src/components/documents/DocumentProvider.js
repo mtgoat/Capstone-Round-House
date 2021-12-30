@@ -24,6 +24,29 @@ export const DocumentProvider = (props) => {
         .then(getDocuments)
     }
 
+    const getDocumentById = (id) => {
+        return fetch(`http://localhost:8088/documents/${id}?_expand=situation&_expand=category`)
+            .then(res => res.json())
+    }
+
+    const releaseDocument = documentId => {
+        return fetch(`http://localhost:8088/documents/${documentId}`, {
+            method: "DELETE"
+        })
+            .then(getDocuments)
+    }
+
+    const updateDocument = documentObj => {
+        return fetch(`http://localhost:8088/documents/${documentObj.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(documentObj)
+        })
+          .then(getDocuments)
+      }
+
     /*
         You return a context provider which has the
         `animals` state, `getAnimals` function,
@@ -32,7 +55,7 @@ export const DocumentProvider = (props) => {
     */
     return (
         <DocumentContext.Provider value={{
-            documents, getDocuments, addDocument
+            documents, getDocuments, addDocument, releaseDocument, getDocumentById, updateDocument
         }}>
             {props.children}
         </DocumentContext.Provider>

@@ -2,22 +2,24 @@ import React, { Component } from "react";
 import "./NavBar.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Container, Nav, Navbar, Image } from "react-bootstrap"
+import { Logout } from "../auth/Logout";
 
 class NavBar extends Component{
   render () {
     return (
       <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="light" variant="light">
             <Container>
             
-              <Navbar.Brand href="#home">Round House| Home</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#newDoc">Add New Document</Nav.Link>
-                    <Nav.Link href="#search">Search</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/documents/create/">Add New Document</Nav.Link>
+                    <Nav.Link href="/search">Search</Nav.Link>
+                    
                     </Nav>
+                    <Logout/>
                   </Navbar.Collapse>  
             </Container>
       </Navbar>

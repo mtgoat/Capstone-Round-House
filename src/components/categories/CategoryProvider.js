@@ -1,27 +1,27 @@
 import React, { useState, createContext } from "react";
 
 // The context is imported and used by individual components that need data
-export const SituationContext = createContext()
+export const CategoryContext = createContext()
 
 // This component establishes what data can be used.
-export const SituationProvider = (props) => {
-    const [situations, setSituations] = useState([])
+export const CategoryProvider = (props) => {
+    const [categories, setCategories] = useState([])
 
-    const getSituations = () => {
-        return fetch("http://localhost:8088/situations")
+    const getCategories = () => {
+        return fetch("http://localhost:8088/categories")
         .then(res =>  res.json())
-        .then(setSituations)
+        .then(setCategories)
     }
 
-    const addSituation = situationObj => {
-        return fetch("http://localhost:8088/situations", {
+    const addCategory = categoryObj => {
+        return fetch("http://localhost:8088/categories", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(situationObj)
+            body: JSON.stringify(categoryObj)
         })
-        .then(getSituations)
+        .then(getCategories)
     }
 
     /*
@@ -31,10 +31,10 @@ export const SituationProvider = (props) => {
         allows any child elements to access them.
     */
     return (
-        <SituationContext.Provider value={{
-            situations, getSituations, addSituation
+        <CategoryContext.Provider value={{
+            categories, getCategories, addCategory
         }}>
             {props.children}
-        </SituationContext.Provider>
+        </CategoryContext.Provider>
     )
 }

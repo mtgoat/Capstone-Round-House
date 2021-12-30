@@ -1,0 +1,104 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "firstName": "Squirrel",
+      "lastName": "Walnut",
+      "email": "squirrel@walnut.com"
+    },
+    {
+      "email": "cat@fish.com",
+      "firstName": "Cat",
+      "lastName": "Fish",
+      "id": 2
+    }
+  ],
+  "situations": [
+    {
+      "id": 1,
+      "name": "Short-term medical care situation"
+    },
+    {
+      "id": 2,
+      "name": "Long-term medical care situation"
+    },
+    {
+      "id": 3,
+      "name": "Incapaciated medical care situation"
+    },
+    {
+      "id": 4,
+      "name": "Other"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Medical"
+    },
+    {
+      "id": 2,
+      "name": "Financial"
+    },
+    {
+      "id": 3,
+      "name": "Legal"
+    },
+    {
+      "id": 4,
+      "name": "Other"
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "name": "Living Will",
+      "isPaper": true,
+      "access": "in the filing cabinet",
+      "note": "please look under healthcare proxy",
+      "customerId": 1,
+      "situationId": 2,
+      "categoryId": 3
+    },
+    {
+      "id": 2,
+      "name": "Medicare Card",
+      "isPaper": true,
+      "access": "in the wallet",
+      "note": "it is also online",
+      "customerId": 1,
+      "situationId": 1,
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "name": "List of family contact",
+      "isPaper": true,
+      "access": "in the desk drawer",
+      "note": "please look under healthcare proxy",
+      "customerId": 1,
+      "situationId": 4,
+      "categoryId": 4
+    },
+    {
+      "id": 4,
+      "name": "List of medicines",
+      "isPaper": true,
+      "access": "in the filing cabinet",
+      "note": "please look under health",
+      "customerId": 1,
+      "situationId": 1,
+      "categoryId": 1
+    },
+    {
+      "name": "John's family contact",
+      "isPaper": false,
+      "access": "Filing cabinet",
+      "note": "Filing cabinet",
+      "customerId": 2,
+      "situationId": 3,
+      "categoryId": 4,
+      "id": 5
+    }
+  ]
+}
