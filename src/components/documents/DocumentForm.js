@@ -4,33 +4,22 @@ import { DocumentContext } from "./DocumentProvider";
 import { SituationContext } from "../situations/SituationProvider";
 import { CategoryContext } from "../categories/CategoryProvider";
 import "./Document.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
  export const DocumentForm = () => {
-
+   //wait for data before button is active
+   const [isLoading, setIsLoading] = useState(true);
 
      //this is for the add document//
-     const { addDocument } = useContext(DocumentContext)
+     const { addDocument, getDocumentById, updateDocument } = useContext(DocumentContext)
      const { categories, getCategories } = useContext(CategoryContext)
      const { situations, getSituations } = useContext(SituationContext)
 
-     const [document, setDocument] = useState ({
-        name:"",
-        isPaper: true,
-        access: "",
-        note: "",
-        customerId: +localStorage.activeUser,
-        situationId: 0,
-        categoryId: 0
-    });
+     const [document, setDocument] = useState ({})
+     const {documentId} = useParams();
 
+     console.log(documentId)
      const navigate = useNavigate ();
-
-     useEffect (() => {
-         getSituations()
-         .then(getCategories)
-         .then()
-     }, [])
 
 //     // const handleFirstNameInput = (event) => {
 //     //     let copyOfState = {...employee}
@@ -59,21 +48,65 @@ import { useNavigate } from 'react-router-dom';
     //     setDocument(newDocument)
     // }
     
-    const handeClickNewDocument = (event) => {
-        event.preventDefault()
-
+    const handeClickNewDocument = () => {
+       
+     if (document.name === "" || document.access === "" || document.note === ""){
+             window.alert("Please full out name, access, or/and note section(s) in the form")
+         } else {
+           //disable the button - no extra clicks
+            setIsLoading(true);
+            if (documentId){
+                //PUT - update
         const situationId = parseInt(document.situationId)
         const categoryId = parseInt(document.categoryId)
-
-        // if (situationId === 0 || categoryId === 0 ){
-        //     window.alert("Please full out all information in the form")
-        // }else {
+        const isPaper = JSON.parse(document.isPaper)
+        
          document.situationId = situationId
          document.categoryId = categoryId
-         addDocument(document)
+         document.isPaper = isPaper
+
+        updateDocument({
+            id:document.id,
+            name:document.name,
+            isPaper: document.isPaper,
+            access: document.access,
+            note: document.note,
+            customerId: +localStorage.activeUser,
+            situationId: document.situationId,
+            categoryId: document.categoryId
+        })
+        .then(() => navigate("/"))
+                     }else{
+                         //POST - add
+         addDocument({
+            name:document.name,
+            isPaper: document.isPaper,
+            access: document.access,
+            note: document.note,
+            customerId: +localStorage.activeUser,
+            situationId: document.situationId,
+            categoryId: document.categoryId
+         })
          .then(() => navigate("/"))
-        // }
+            }
+         }
     }
+    // Get situations and categories. If documentId is in the URL, getDocumentById
+    useEffect (() => {
+        getSituations()
+        .then(getCategories)
+        .then( () => {
+            if (documentId){
+               getDocumentById(documentId)
+               .then(document => {
+                   setDocument(document)
+                   setIsLoading(false)
+               })
+            } else {
+                setIsLoading(false)
+            }
+            })
+    }, [])
 
 return (
     
@@ -89,10 +122,10 @@ return (
     {/* this is for Ispaper*/}
      <fieldset>
                 <div className="form-group">
-                     <label htmlfor="isPaper">Type of Document Format </label>
-                     <select name="isPaper" id="isPaper">
-                     <option onChange={ handleControlledInputChange}  id="isPaper" name="isPaper" value="true">Paper format</option>
-                     <option onChange={ handleControlledInputChange}  id="isPaper" name="isPaper" value="false">Digital format</option>
+                     <label htmlFor="isPaper">Type of Document Format </label>
+                     <select name="isPaper" id="isPaper"onChange={ handleControlledInputChange} >
+                     <option  id="isPaper" name="isPaper" value="true">Paper format</option>
+                     <option  id="isPaper" name="isPaper" value="false">Digital format</option>
                      </select>
                 </div>
     </fieldset> 
@@ -127,7 +160,7 @@ return (
 
     {/* checkbox example <fieldset>
                 <div className="form-group">
-                     <label htmlfor="manager">If you are a manager, please check the box here: </label>
+                     <label htmlFor="manager">If you are a manager, please check the box here: </label>
                      <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="manager" name="manager" value={employee.manager}></input>
                    
                 </div>
@@ -146,13 +179,17 @@ return (
             </div>
     </fieldset>
 
-          <button className="btn btn-primary"
-            onClick={handeClickNewDocument} preventDefault>
-            Save New Document Information
+          <button className="btn btn-primary" 
+            onClick={ event => {
+                event.preventDefault() // Prevent browser from submitting the form and refreshing the page
+                handeClickNewDocument()
+            }}>
+            {documentId ? <> Update information</>: <>Save New Document Information</>}
           </button>
 </form>
 
 )
 }
 
-console.log("hello")
+
+//disabled={isLoading}
