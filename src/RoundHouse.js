@@ -6,6 +6,7 @@ import { Routes, Route, Navigate } from "react-router";
 import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import { CustomerContext } from "./components/customers/CustomerProvider";
+import { Logout } from "./components/auth/Logout";
 
 export const RoundHouse = () => {
     const [loggedin, setLoggedin] = useState(false);
@@ -17,7 +18,6 @@ export const RoundHouse = () => {
             <>
                 <NavBar />
                 <ApplicationViews />
-                
             </>
         );
     } else {
