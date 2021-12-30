@@ -69,65 +69,64 @@ import { useNavigate } from 'react-router-dom';
         }
     }
 
-// return (
-// <form className="employeeForm">
-//     <h2 className="employeeForm__title">New Employee Register</h2>
-//     <fieldset>
-//         <div className="form-group">
-//             <label htmlFor="firstName">Employee First Name:</label>
-//             <input type="text" id="firstName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee First Name" value={employee.firstName}/>
-//         </div>
-//     </fieldset>
+return (
+<form className="employeeForm">
+    <h2 className="employeeForm__title">New Employee Register</h2>
+    <fieldset>
+        <div className="form-group">
+            <label htmlFor="firstName">Employee First Name:</label>
+            <input type="text" id="firstName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee First Name" value={employee.firstName}/>
+        </div>
+    </fieldset>
 
-//     <fieldset>
-//         <div className="form-group">
-//             <label htmlFor="lastName">Employee Last Name:</label>
-//             <input type="text" id="lastName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.lastName}/>
-//         </div>
-//     </fieldset>
+    <fieldset>
+        <div className="form-group">
+            <label htmlFor="lastName">Employee Last Name:</label>
+            <input type="text" id="lastName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.lastName}/>
+        </div>
+    </fieldset>
 
-//     <fieldset>
-//             <div className="form-group">
-//                 <label htmlFor="location">Choose a location: </label>
-//                 <select onChange={handleControlledInputChange} defaultValue={employee.locationId} name="locationId" id="locationId" className="form-control">
-//                     <option  value="0">Select a location</option>
-//                     {locations.map(l => (
-//                         <option key={l.id} value={l.id} >
-//                             {l.name}
-//                         </option>
-//                     ))}
-//                 </select>
-//             </div>
-//     </fieldset>
+    <fieldset>
+            <div className="form-group">
+                <label htmlFor="location">Choose a location: </label>
+                <select onChange={handleControlledInputChange} defaultValue={employee.locationId} name="locationId" id="locationId" className="form-control">
+                    <option  value="0">Select a location</option>
+                    {locations.map(l => (
+                        <option key={l.id} value={l.id} >
+                            {l.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
+    </fieldset>
 
-//     <fieldset>
-//                 <div className="form-group">
-//                      <label htmlfor="manager">If you are a manager, please check the box here: </label>
-//                      <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="manager" name="manager" value={employee.manager}></input>
+    <fieldset>
+                <div className="form-group">
+                     <label htmlfor="manager">If you are a manager, please check the box here: </label>
+                     <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="manager" name="manager" value={employee.manager}></input>
                    
-//                 </div>
-//     </fieldset>
-//     <fieldset>
-//                 <div className="form-group">
-//                      <label htmlfor="fullTime">If you work full time, please check the box here: </label>
-//                      <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="fullTime" name="fullTime" value={employee.fullTime}></input>
-//                 </div>
-//     </fieldset>
+                </div>
+    </fieldset>
+    <fieldset>
+                <div className="form-group">
+                     <label htmlfor="fullTime">If you work full time, please check the box here: </label>
+                     <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="fullTime" name="fullTime" value={employee.fullTime}></input>
+                </div>
+    </fieldset>
 
-//     <fieldset>
-//         <div className="form-group">
-//             <label htmlFor="lastName">Current Hourly Rate:</label>
-//             <input type="number" id="hourlyRate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.hourlyRate}/>
-//         </div>
-//     </fieldset>
+    <fieldset>
+        <div className="form-group">
+            <label htmlFor="lastName">Current Hourly Rate:</label>
+            <input type="number" id="hourlyRate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.hourlyRate}/>
+        </div>
+    </fieldset>
 
-//           <button className="btn btn-primary"
-//             onClick={handeClickRegisterEmployee}>
-//             Save New Employee Registration
-//           </button>
-// </form>
+          <button className="btn btn-primary"
+            onClick={handeClickRegisterEmployee}>
+            Save New Employee Registration
+          </button>
+</form>
 
-// )
-// }
+)
+}
 
-console.log("hello")

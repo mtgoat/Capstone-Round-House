@@ -22,6 +22,7 @@ export const ApplicationViews = () => {
                 <CustomerProvider>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/documents" element={<Home />} />
                         <Route path="/newDoc/*" element={<DocumentForm />} />
                     </Routes>
                 </CustomerProvider>
