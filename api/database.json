@@ -82,13 +82,13 @@
     },
     {
       "id": 4,
-      "name": "List of medicines",
-      "isPaper": true,
-      "access": "in the filing cabinet",
-      "note": "please look under health",
-      "customerId": 1,
-      "situationId": 1,
-      "categoryId": 1
+      "name": "Cat",
+      "isPaper": false,
+      "access": "under the floor",
+      "note": "please do not look",
+      "customerId": 2,
+      "situationId": 4,
+      "categoryId": 2
     }
   ]
 }

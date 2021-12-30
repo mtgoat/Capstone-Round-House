@@ -18,13 +18,8 @@ import { useNavigate, useParams } from 'react-router-dom';
      const [document, setDocument] = useState ({})
      const {documentId} = useParams();
 
+     console.log(documentId)
      const navigate = useNavigate ();
-
-     useEffect (() => {
-         getSituations()
-         .then(getCategories)
-         .then()
-     }, [])
 
 //     // const handleFirstNameInput = (event) => {
 //     //     let copyOfState = {...employee}
@@ -53,14 +48,15 @@ import { useNavigate, useParams } from 'react-router-dom';
     //     setDocument(newDocument)
     // }
     
-    const handeClickNewDocument = (event) => {
-        event.preventDefault()
+    const handeClickNewDocument = () => {
+       
      if (document.name === "" || document.access === "" || document.note === ""){
              window.alert("Please full out name, access, or/and note section(s) in the form")
          } else {
            //disable the button - no extra clicks
             setIsLoading(true);
             if (documentId){
+                //PUT - update
         const situationId = parseInt(document.situationId)
         const categoryId = parseInt(document.categoryId)
         const isPaper = JSON.parse(document.isPaper)
@@ -68,22 +64,49 @@ import { useNavigate, useParams } from 'react-router-dom';
          document.situationId = situationId
          document.categoryId = categoryId
          document.isPaper = isPaper
+
         updateDocument({
             id:document.id,
             name:document.name,
             isPaper: document.isPaper,
             access: document.access,
-            note: access.note,
+            note: document.note,
             customerId: +localStorage.activeUser,
-            situationId: 0,
-            categoryId: 0
+            situationId: document.situationId,
+            categoryId: document.categoryId
         })
-       
-
-         addDocument(document)
+        .then(() => navigate("/"))
+                     }else{
+                         //POST - add
+         addDocument({
+            name:document.name,
+            isPaper: document.isPaper,
+            access: document.access,
+            note: document.note,
+            customerId: +localStorage.activeUser,
+            situationId: document.situationId,
+            categoryId: document.categoryId
+         })
          .then(() => navigate("/"))
+            }
          }
     }
+    // Get situations and categories. If documentId is in the URL, getDocumentById
+    useEffect (() => {
+        getSituations()
+        .then(getCategories)
+        .then( () => {
+            if (documentId){
+               getDocumentById(documentId)
+               .then(document => {
+                   setDocument(document)
+                   setIsLoading(false)
+               })
+            } else {
+                setIsLoading(false)
+            }
+            })
+    }, [])
 
 return (
     
@@ -156,9 +179,12 @@ return (
             </div>
     </fieldset>
 
-          <button className="btn btn-primary"
-            onClick={handeClickNewDocument} preventDefault>
-            Save New Document Information
+          <button className="btn btn-primary" 
+            onClick={ event => {
+                event.preventDefault() // Prevent browser from submitting the form and refreshing the page
+                handeClickNewDocument()
+            }}>
+            {documentId ? <> Update information</>: <>Save New Document Information</>}
           </button>
 </form>
 
@@ -166,3 +192,4 @@ return (
 }
 
 
+//disabled={isLoading}
