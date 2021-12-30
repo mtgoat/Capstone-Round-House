@@ -1,130 +1,133 @@
+// Purpose: to add a new document onject at the documents array at API 
 import React, {useContext, useEffect, useState} from "react";
 import { DocumentContext } from "./DocumentProvider";
-import { LocationContext } from "../locations/LocationDataProvider";
-import "./Employee.css";
+import { SituationContext } from "../locations/LocationDataProvider";
+import { CategoryContext } from "../categories/CategoryProvider";
+import "./Document.css";
 import { useNavigate } from 'react-router-dom';
 
-export const EmployeeForm = () => {
-    const { addEmployee } = useContext(EmployeeContext)
-    const { locations, getLocations } = useContext(LocationContext)
+ export const DocumentForm = () => {
+     const { addDocument } = useContext(DocumentContext)
+     const { categories, getCategories } = useContext(CategoryContext)
+     const { situations, getSituations } = useContext(SituationContext)
 
-    const [employee, setEmployee] = useState ({
-        firstName:"",
-        lastName: "",
-        manager:  false,
-        fullTime: false,
-        hourlyRate: 0,
-        locationId: 0
+     const [document, setDocument] = useState ({
+        name:"",
+        isPaper: true,
+        access: "",
+        note: "",
+        customerId: +localStorage.activeUser,
+        situationId: 0,
+        categoryId: 0
     });
 
-    const navigateNE = useNavigate ();
+     const navigate = useNavigate ();
 
-    useEffect (() => {
-        getLocations()
-        .then()
-    }, [])
+     useEffect (() => {
+         getSituations()
+         .then(getCategories)
+         .then()
+     }, [])
 
-    // const handleFirstNameInput = (event) => {
-    //     let copyOfState = {...employee}
+//     // const handleFirstNameInput = (event) => {
+//     //     let copyOfState = {...employee}
 
-    //     copyOfState.firstName = event.target.value
+//     //     copyOfState.firstName = event.target.value
 
-    //     setEmployee(copyOfState)
-    // }
+//     //     setEmployee(copyOfState)
+//     // }
 
 
     const handleControlledInputChange = (event) => {
 
-        let newEmployee = { ...employee }
+        let newDocument = { ...document }
 
-        newEmployee[event.target.id] = event.target.value
-        setEmployee(newEmployee)
+        newDocument[event.target.id] = event.target.value
+        setDocument(newDocument)
     }
 
     const handleCheckBoxControlledInputChange = (event) => {
 
-        let newEmployee = { ...employee }
+        let newDocument = { ...document }
 
-        newEmployee[event.target.id] = event.target.checked
-
-        setEmployee(newEmployee)
+        newDocument[event.target.id] = event.target.checked
+        setDocument(newDocument)
     }
     
-    const handeClickRegisterEmployee = (event) => {
+    const handeClickRegisterDocument = (event) => {
         event.preventDefault()
 
+        const situationId = parseInt (document.situationId)
+        const categoryId = parseInt (document.categoryId)
 
-        const locationId = parseInt (employee.locationId)
-
-        employee.locationId = locationId
-// which is better null or undefiend? 
-
-        if (locationId === 0){
+        if (situationId === 0 || categoryId === 0 ){
             window.alert("Please full out all information in the form")
         }else {
             
-         addEmployee(employee)
-         .then(() => navigateNE("/employees"))
+         addDocument(document)
+         .then(() => navigate("/home"))
         }
     }
 
-return (
-<form className="employeeForm">
-    <h2 className="employeeForm__title">New Employee Register</h2>
-    <fieldset>
-        <div className="form-group">
-            <label htmlFor="firstName">Employee First Name:</label>
-            <input type="text" id="firstName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee First Name" value={employee.firstName}/>
-        </div>
-    </fieldset>
+// return (
+// <form className="employeeForm">
+//     <h2 className="employeeForm__title">New Employee Register</h2>
+//     <fieldset>
+//         <div className="form-group">
+//             <label htmlFor="firstName">Employee First Name:</label>
+//             <input type="text" id="firstName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee First Name" value={employee.firstName}/>
+//         </div>
+//     </fieldset>
 
-    <fieldset>
-        <div className="form-group">
-            <label htmlFor="lastName">Employee Last Name:</label>
-            <input type="text" id="lastName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.lastName}/>
-        </div>
-    </fieldset>
+//     <fieldset>
+//         <div className="form-group">
+//             <label htmlFor="lastName">Employee Last Name:</label>
+//             <input type="text" id="lastName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.lastName}/>
+//         </div>
+//     </fieldset>
 
-    <fieldset>
-            <div className="form-group">
-                <label htmlFor="location">Choose a location: </label>
-                <select onChange={handleControlledInputChange} defaultValue={employee.locationId} name="locationId" id="locationId" className="form-control">
-                    <option  value="0">Select a location</option>
-                    {locations.map(l => (
-                        <option key={l.id} value={l.id} >
-                            {l.name}
-                        </option>
-                    ))}
-                </select>
-            </div>
-    </fieldset>
+//     <fieldset>
+//             <div className="form-group">
+//                 <label htmlFor="location">Choose a location: </label>
+//                 <select onChange={handleControlledInputChange} defaultValue={employee.locationId} name="locationId" id="locationId" className="form-control">
+//                     <option  value="0">Select a location</option>
+//                     {locations.map(l => (
+//                         <option key={l.id} value={l.id} >
+//                             {l.name}
+//                         </option>
+//                     ))}
+//                 </select>
+//             </div>
+//     </fieldset>
 
-    <fieldset>
-                <div className="form-group">
-                     <label htmlfor="manager">If you are a manager, please check the box here: </label>
-                     <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="manager" name="manager" value={employee.manager}></input>
+//     <fieldset>
+//                 <div className="form-group">
+//                      <label htmlfor="manager">If you are a manager, please check the box here: </label>
+//                      <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="manager" name="manager" value={employee.manager}></input>
                    
-                </div>
-    </fieldset>
-    <fieldset>
-                <div className="form-group">
-                     <label htmlfor="fullTime">If you work full time, please check the box here: </label>
-                     <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="fullTime" name="fullTime" value={employee.fullTime}></input>
-                </div>
-    </fieldset>
+//                 </div>
+//     </fieldset>
+//     <fieldset>
+//                 <div className="form-group">
+//                      <label htmlfor="fullTime">If you work full time, please check the box here: </label>
+//                      <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="fullTime" name="fullTime" value={employee.fullTime}></input>
+//                 </div>
+//     </fieldset>
 
-    <fieldset>
-        <div className="form-group">
-            <label htmlFor="lastName">Current Hourly Rate:</label>
-            <input type="number" id="hourlyRate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.hourlyRate}/>
-        </div>
-    </fieldset>
+//     <fieldset>
+//         <div className="form-group">
+//             <label htmlFor="lastName">Current Hourly Rate:</label>
+//             <input type="number" id="hourlyRate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Employee Last Name" value={employee.hourlyRate}/>
+//         </div>
+//     </fieldset>
 
-          <button className="btn btn-primary"
-            onClick={handeClickRegisterEmployee}>
-            Save New Employee Registration
-          </button>
-</form>
+//           <button className="btn btn-primary"
+//             onClick={handeClickRegisterEmployee}>
+//             Save New Employee Registration
+//           </button>
+// </form>
 
-)
-}
+// )
+// }
+
+console.log("hello")

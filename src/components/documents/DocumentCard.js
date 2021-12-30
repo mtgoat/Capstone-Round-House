@@ -1,3 +1,4 @@
+//purpose: to print an indidicual card template for each object at documents array in API
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";

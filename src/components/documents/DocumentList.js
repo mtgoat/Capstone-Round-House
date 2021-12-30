@@ -2,11 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { DocumentContext } from "./DocumentProvider";
 import { DocumentCard } from "./DocumentCard";
 import "./Document.css";
-
+import { useNavigate } from "react-router-dom";
 
 export const DocumentList = (props) => {
     console.log(props.id)
     const { documents, getDocuments } = useContext(DocumentContext)
+    const navigate = useNavigate ()
 
     useEffect (() => {
         // console.log("DocumentList: useEffect - getDocuments")
