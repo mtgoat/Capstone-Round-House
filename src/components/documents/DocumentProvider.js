@@ -47,6 +47,8 @@ export const DocumentProvider = (props) => {
           .then(getDocuments)
       }
 
+      //this is for search function
+      const [ searchTerms, setSearchTerms ] = useState("")
     /*
         You return a context provider which has the
         `animals` state, `getAnimals` function,
@@ -55,7 +57,7 @@ export const DocumentProvider = (props) => {
     */
     return (
         <DocumentContext.Provider value={{
-            documents, getDocuments, addDocument, releaseDocument, getDocumentById, updateDocument
+            documents, getDocuments, addDocument, releaseDocument, getDocumentById, updateDocument, searchTerms, setSearchTerms
         }}>
             {props.children}
         </DocumentContext.Provider>
