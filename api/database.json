@@ -82,13 +82,13 @@
     },
     {
       "id": 4,
-      "name": "Cat",
+      "name": "Cat document",
       "isPaper": false,
-      "access": "under the floor",
-      "note": "please do not look",
+      "access": "it is in my google doc",
+      "note": "sign in with my gmail ",
       "customerId": 2,
       "situationId": 4,
-      "categoryId": 2
+      "categoryId": 4
     }
   ]
 }
