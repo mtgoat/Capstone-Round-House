@@ -8,10 +8,9 @@ import { CategoryProvider } from "./categories/CategoryProvider";
 
 import { DocumentProvider } from "./documents/DocumentProvider";
 import { DocumentForm } from "./documents/DocumentForm";
+import { DocumentSearch} from "./documents/DocumentSearch"
 
 import { SituationProvider } from "./situations/SituationProvider";
-
-import { Search } from "./search/Search";
 
 export const ApplicationViews = () => {
 
@@ -25,7 +24,7 @@ export const ApplicationViews = () => {
                         <Route path="documents" element={<Home />} />
                         <Route path="documents/create/*" element={<DocumentForm />} />
                         <Route path="documents/edit/:documentId/*" element={< DocumentForm />}/>
-                        <Route path="search" element={<Search />} />
+                        <Route path="search" element={<DocumentSearch />} />
                     </Routes>
                 </CustomerProvider>
             </CategoryProvider>
