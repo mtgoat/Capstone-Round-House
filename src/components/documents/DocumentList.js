@@ -1,16 +1,12 @@
-// purpose: to display documents at the home tab and to display search result
-import React, { useContext, useEffect, useState } from "react";
+// purpose: to display documents at the home tab
+import React, { useContext, useEffect } from "react";
 import { DocumentContext } from "./DocumentProvider";
 import { DocumentCard } from "./DocumentCard";
 import "./Document.css";
-import { useNavigate } from "react-router-dom";
 
 export const DocumentList = (props) => {
     console.log(props.id)
-    const { documents, getDocuments, searchTerms } = useContext(DocumentContext)
-
-    const [ filteredDocuments, setFiltered ] = useState([])
-    const navigate = useNavigate ()
+    const { documents, getDocuments } = useContext(DocumentContext)
 
       // Empty dependency array - useEffect only runs after first render
     useEffect (() => {
@@ -20,16 +16,10 @@ export const DocumentList = (props) => {
 
  // useEffect dependency array with dependencies - will run if dependency changes (state)
   // searchTerms will cause a change
-  useEffect(() => {
-    if (searchTerms !== ""){
-      // If the search field is not blank, display matching animals
-      const subset = documents.filter(document => document.name.toLowerCase().includes(searchTerms.toLowerCase()))
-      setFiltered(subset)
-    } else {
-            // If the search field is blank, display all animals
-            setFiltered(documents)
-    }
-  }, [searchTerms, documents])
+  useEffect (() => {
+    // console.log("DocumentList: useEffect - getDocuments")
+    getDocuments()
+}, [])
 
 return (
     <div className="documents">

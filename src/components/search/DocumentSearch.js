@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { DocumentContext } from "./DocumentProvider";
+import { DocumentContext } from "../documents/DocumentProvider";
 // import { Form, Col } from "react-bootstrap";
 
 export const DocumentSearch = () => {
@@ -9,7 +9,7 @@ export const DocumentSearch = () => {
 
     return ( 
       <>
-      Document search:
+      Document search by a document name:
       <input type="text"
         className="input--wide"
         onKeyUp={(event) => setSearchTerms(event.target.value)}

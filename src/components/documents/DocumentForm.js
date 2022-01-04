@@ -111,7 +111,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 return (
     
 <form className="documentForm">
-    <h2 className="documentForm__title">New Document Register</h2>
+{documentId ? <h2 className="documentForm__title">Edit document information</h2>: <h2 className="documentForm__title">New Document Register</h2>}
+    
     <fieldset>
         <div className="form-group">
             <label htmlFor="Name">Document Name:</label>
