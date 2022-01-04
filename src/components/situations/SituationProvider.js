@@ -1,3 +1,4 @@
+// Purpose: to provide situation api for adding and updating documents 
 import React, { useState, createContext } from "react";
 
 // The context is imported and used by individual components that need data

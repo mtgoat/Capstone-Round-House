@@ -1,5 +1,5 @@
 //purpose: A) to print an indidicual card template for each object at documents array in API B) to delete and to edit indiviual document info
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext} from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import './Document.css';
