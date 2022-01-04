@@ -26,7 +26,7 @@ export const Home = () => {
                     </Nav.Item>
 
                     <Nav.Item>
-                    <Nav.Link eventKey="incapacited">Incapacited Medical Care Situation</Nav.Link>
+                    <Nav.Link eventKey="incapacited">Assisted Living Situation</Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>

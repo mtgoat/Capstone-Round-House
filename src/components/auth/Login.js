@@ -46,13 +46,13 @@ export const Login = (props) => {
                     <section className="left-sign-in">
                 
                         <section as={Col} >
-                            <div as={Row}>
+                            {/* <div as={Row}>
                             {/* <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
-                                <Col sm="10">
+                                {/* <Col sm="10">
                                 <h1 className="title--signIn" >Roundhouse</h1>
                                
-                                </Col>
-                            </div>
+                                </Col> */}
+                            {/* </div> */} 
 
                             <Form className="form--signIn" onSubmit={handleLogin}>
                                 
@@ -81,8 +81,9 @@ export const Login = (props) => {
                     </section>
                     </Col>
                     <Col sm={6}>
+                    <h1 className="title--signIn" >Roundhouse</h1>
                     <section className="right-pic">
-                    <img className="pic--signIn" src='\img\Baltimore_and_Ohio_Railroad,_Martinsburg_East_Roundhouse,_East_End_of_Race_and_Martin_Streets,_Martinsburg,_Berkeley_County,_WV_HAER_WVA,2-MART,1B-_(sheet_2_of_3).png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Shops" />
+                    <img className="pic--signIn" src='\img\SmallBaltimore_and_Ohio_Railroad,_Martinsburg_East_Roundhouse,_East_End_of_Race_and_Martin_Streets,_Martinsburg,_Berkeley_County,_WV_HAER_WVA,2-MART,1B-_(sheet_2_of_3).png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Roundhouse" />
                     </section>
                     </Col>
                 </Row>
