@@ -1,7 +1,8 @@
 // Purpose:to register a new user
-import React, { useRef } from "react"
-import { useNavigate } from "react-router-dom"
-import "./Login.css"
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Login.css";
 import { Form, Button, Row, Col, Image } from 'react-bootstrap';
 
 export const Register = (props) => {
@@ -62,9 +63,9 @@ export const Register = (props) => {
 
             <>
             <div as={Row}>
-            {/* <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
+            {/* <Image column sm="2" rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
             <Col sm="10">
-            <h1 className="h3 mb-3 font-weight-normal">Please Register for Round House</h1>
+            <h1 className="h3 mb-3 font-weight-normal">Please Register for Roundhouse</h1>
             </Col>
             </div>
 
@@ -91,9 +92,12 @@ export const Register = (props) => {
                     <Form.Text className="mb-3 text-muted"> We'll never share your information with anyone else </Form.Text>
                 </Form.Group>
 
-                    <Button variant="primary" type="submit" className="mb-3"> Register and Sign in </Button>
+                    <Button variant="success" type="submit" className="mb-3"> Register and Sign in </Button>
                 
             </Form>
+            <section className="link--register">
+                <Link to="/login">Already a member?</Link>
+            </section>
             </>
         </main>
     )

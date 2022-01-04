@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+margin: 1em;
 }
 
 .form--Regi {
@@ -14,4 +14,8 @@ body {
     margin: 2em;
     border: rgb(104, 159, 161) solid 0.1rem;
     border-radius: 2em;
+}
+
+.border1{
+    border: rgb(104, 159, 161) solid 0.1rem;
 }

@@ -8,5 +8,6 @@
       flex-basis: 35%;
       margin: 1em;
       padding: 1em;
-      border: 1px solid goldenrod;
+      border: rgb(104, 159, 161) solid 0.1rem;
+      border-radius: 2em;
   }

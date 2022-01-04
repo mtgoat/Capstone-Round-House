@@ -23,7 +23,7 @@ export const DocumentCard = ({document}) => {
         <div className="document__note">Note: {document.note}</div>
         {document.situationId === "" ? <div className="document__situation">Situation: no siguation assigned</div>: <div className="document__situation">Situation: {document.situation.name}</div>}
         {document.categoryId === "" ? <div className="document__category">Category: no category assigned</div>: <div className="document__category">category: {document.category.name}</div>}
-        <Button id="edit-button" className=" btn-secondary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>
+        <Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
         <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button>
     </section>
     )

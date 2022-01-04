@@ -55,8 +55,6 @@ import { useNavigate, useParams } from 'react-router-dom';
          } else {
            //disable the button - no extra clicks
             setIsLoading(true);
-            if (documentId){
-                //PUT - update
         const situationId = parseInt(document.situationId)
         const categoryId = parseInt(document.categoryId)
         const isPaper = JSON.parse(document.isPaper)
@@ -65,6 +63,8 @@ import { useNavigate, useParams } from 'react-router-dom';
          document.categoryId = categoryId
          document.isPaper = isPaper
 
+            if (documentId){
+                //PUT - update
         updateDocument({
             id:document.id,
             name:document.name,

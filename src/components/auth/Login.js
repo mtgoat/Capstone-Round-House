@@ -37,37 +37,55 @@ export const Login = (props) => {
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
                 <div>User does not exist</div>
-                <Button variant="primary" className="button--close" onClick={e => existDialog.current.close()}>Close</Button>
+                <Button variant="success" className="button--close" onClick={e => existDialog.current.close()}>Close</Button>
             </dialog>
 
-            <section>
-                <div as={Row}>
-                {/* <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
-                <Col sm="10">
-                <h1 >Round House</h1>
-                </Col>
-            </div>
+            <Container>
+                <Row>
+                    <Col sm={6}>
+                    <section className="border1">
+                
+                        <section as={Col} >
+                            <div as={Row}>
+                            {/* <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
+                                <Col sm="10">
+                                <h1 >Roundhouse</h1>
+                                </Col>
+                            </div>
 
-                <Form className="form--login" onSubmit={handleLogin}>
+                            <Form className="form--login" onSubmit={handleLogin}>
+                                
+                                <h2>Please sign in</h2>
+                                <Form.Group as={Row}>
+                                    <Form.Label sm="2" htmlFor="inputEmail"> Email address </Form.Label>
+                                    <Col sm="10">
+                                    <Form.Control ref={email} type="email"
+                                        id="email"
+                                        className="mb-3 form-control"
+                                        placeholder="Email address"
+                                        required autoFocus /></Col>
+                                </Form.Group>
+                                    <Button className="mb-3" variant="success" type="submit">
+                                        Sign in
+                                    </Button>
+                            </Form>
+                        
+                            <section className="link--register">
+                                <Link to="/register">Not a member yet?</Link>
+                            </section>
+                        
+                        </section>
+
                     
-                    <h2>Please sign in</h2>
-                    <Form.Group as={Row}>
-                        <Form.Label sm="2" htmlFor="inputEmail"> Email address </Form.Label>
-                        <Col sm="10">
-                        <Form.Control ref={email} type="email"
-                            id="email"
-                            className="mb-3 form-control"
-                            placeholder="Email address"
-                            required autoFocus /></Col>
-                     </Form.Group>
-                        <Button className="mb-3" type="submit">
-                            Sign in
-                        </Button>
-                </Form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
+                    </section>
+                    </Col>
+                    <Col sm={6}>
+                    <section className="border2">
+                    <Image src='../../../public/Baltimore_and_Ohio_Railroad_Martinsburg_Shops,_circa_1858.png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Shops" ></Image>
+                    </section>
+                    </Col>
+                </Row>
+           </Container>
         </main>
     )
 }
