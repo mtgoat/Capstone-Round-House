@@ -16,6 +16,22 @@ margin: 1em;
     border-radius: 2em;
 }
 
-.border1{
-    border: rgb(104, 159, 161) solid 0.1rem;
+.pic--signIn {
+    max-width: 100%;
+    height: auto;
+}
+
+.form--signIn{
+    padding:2em;
+    margin: 3em  0em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title--signIn{
+    text-align: center;
+}
+
+.title--logo{
+    
 }

@@ -91,16 +91,6 @@
       "categoryId": 4
     },
     {
-      "id": 5,
-      "name": "Testing",
-      "isPaper": false,
-      "access": "Test",
-      "note": "Filing cabinet",
-      "customerId": 1,
-      "situationId": 1,
-      "categoryId": 4
-    },
-    {
       "name": "Testing2",
       "isPaper": false,
       "access": "Filing cabinet",
@@ -109,6 +99,6 @@
       "situationId": 3,
       "categoryId": 3,
       "id": 6
-    }
+      }
   ]
 }

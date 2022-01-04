@@ -43,17 +43,18 @@ export const Login = (props) => {
             <Container>
                 <Row>
                     <Col sm={6}>
-                    <section className="border1">
+                    <section className="left-sign-in">
                 
                         <section as={Col} >
                             <div as={Row}>
                             {/* <Image column sm="2"src={require('../../img/Logo192.png')} rounded alt="Brand logo" style={{ width: '7rem' }}/> */}
                                 <Col sm="10">
-                                <h1 >Roundhouse</h1>
+                                <h1 className="title--signIn" >Roundhouse</h1>
+                               
                                 </Col>
                             </div>
 
-                            <Form className="form--login" onSubmit={handleLogin}>
+                            <Form className="form--signIn" onSubmit={handleLogin}>
                                 
                                 <h2>Please sign in</h2>
                                 <Form.Group as={Row}>
@@ -80,8 +81,8 @@ export const Login = (props) => {
                     </section>
                     </Col>
                     <Col sm={6}>
-                    <section className="border2">
-                    <Image src='../../../public/Baltimore_and_Ohio_Railroad_Martinsburg_Shops,_circa_1858.png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Shops" ></Image>
+                    <section className="right-pic">
+                    <img className="pic--signIn" src='\img\Baltimore_and_Ohio_Railroad,_Martinsburg_East_Roundhouse,_East_End_of_Race_and_Martin_Streets,_Martinsburg,_Berkeley_County,_WV_HAER_WVA,2-MART,1B-_(sheet_2_of_3).png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Shops" />
                     </section>
                     </Col>
                 </Row>
