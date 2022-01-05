@@ -79,9 +79,9 @@
       "access": "in the desk drawer",
       "note": "please look under healthcare proxy",
       "customerId": 1,
-      "situationId": 4,
-      "categoryId": 4,
-      "rating": 0
+      "situationId": 2,
+      "categoryId": 1,
+      "rating": 4
     },
     {
       "id": 4,
@@ -93,6 +93,17 @@
       "situationId": 4,
       "categoryId": 4,
       "rating": 0
+    },
+    {
+      "name": "Aki",
+      "isPaper": false,
+      "access": "Filing cabinet",
+      "note": "Filing cabinet",
+      "customerId": 1,
+      "situationId": 1,
+      "categoryId": 1,
+      "rating": 2,
+      "id": 5
     }
   ]
 }

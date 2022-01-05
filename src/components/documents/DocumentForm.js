@@ -28,13 +28,13 @@ import Typography from '@mui/material/Typography';
      console.log(documentId)
      const navigate = useNavigate ();
 
-//     // const handleFirstNameInput = (event) => {
-//     //     let copyOfState = {...employee}
-
-//     //     copyOfState.firstName = event.target.value
-
-//     //     setEmployee(copyOfState)
-//     // }
+     //This is for the scoring
+    const handleControlledScoreInputChange = (event) => {
+        let copyOfdocument = {...document}
+        setRatingS(event.target.value) 
+        copyOfdocument.rating = ratingS
+        setDocument(copyOfdocument)
+    }
 
 
     const handleControlledInputChange = (event) => {
@@ -65,7 +65,7 @@ import Typography from '@mui/material/Typography';
         const situationId = parseInt(document.situationId)
         const categoryId = parseInt(document.categoryId)
         const isPaper = JSON.parse(document.isPaper)
-        
+
          document.situationId = situationId
          document.categoryId = categoryId
          document.isPaper = isPaper
@@ -81,7 +81,7 @@ import Typography from '@mui/material/Typography';
             customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
             categoryId: document.categoryId,
-            rating: ratingS
+            rating: +ratingS
         })
         .then(() => navigate("/"))
                      }else{
@@ -94,7 +94,7 @@ import Typography from '@mui/material/Typography';
             customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
             categoryId: document.categoryId,
-            rating: ratingS
+            rating: document.rating
          })
          .then(() => navigate("/"))
             }
@@ -197,11 +197,9 @@ return (
     >
       <Typography component="legend">Importace Rating</Typography>
       <Rating
-        name="simple-controlled"
+        name="Importace Rating"
         value={ratingS}
-        onChange={(handleControlledInputChange, newRating) => {
-          setRatingS(newRating);
-        }}
+        onChange={handleControlledScoreInputChange}
       />
       </Box>
     </fieldset>

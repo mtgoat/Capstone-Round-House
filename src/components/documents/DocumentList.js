@@ -65,8 +65,8 @@ useEffect (() => {
 return (
   <div className="documents">
     <p>sorted by function?</p>
-    <Table responsive striped bordered hover className="documents__table">
-   <thead >
+    <Table responsive striped bordered className="documents__table">
+       <thead >
           <tr>
             <th>document name</th>
             <th>Storage location</th>
@@ -89,9 +89,9 @@ return (
       return <DocumentCard2 key={document.id} document={document} />})
   }
   
-<tr>
+          <tr>
   <td colSpan={7}> Total number of listed documents above: <b>{documents.length}</b> </td>
-  </tr>
+          </tr>
 </Table>
 </div> 
 )
