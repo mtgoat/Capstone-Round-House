@@ -24,7 +24,7 @@ export const Login = (props) => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("activeUser", exists.id)
+                    localStorage.setItem("react_Roundhouse_user", exists.id)
                     props.setLoggedin(true)
                     navigate("/") // change to navigate("/")
                 } else {
@@ -81,9 +81,10 @@ export const Login = (props) => {
                     </section>
                     </Col>
                     <Col sm={6}>
-                    <h1 className="title--signIn" >Roundhouse</h1>
-                    <section className="right-pic">
-                    <img className="pic--signIn" src='\img\SmallBaltimore_and_Ohio_Railroad,_Martinsburg_East_Roundhouse,_East_End_of_Race_and_Martin_Streets,_Martinsburg,_Berkeley_County,_WV_HAER_WVA,2-MART,1B-_(sheet_2_of_3).png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Roundhouse" />
+                     <section className="right-pic">
+                     <p className="title--signIn" >Roundhouse</p>
+                     <img className="pic--signIn" src='\img\SSmallLogoBaltimore_and_Ohio_Railroad,_Martinsburg_West_Roundhouse,_East_End_of_Race_and_Martin_Streets,_Martinsburg,_Berkeley_County,_WV_HAER_WVA,2-MART,1A-_(sheet_2_of_5).png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Roundhouse" />
+                   
                     </section>
                     </Col>
                 </Row>

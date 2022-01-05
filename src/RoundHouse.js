@@ -13,7 +13,7 @@ export const RoundHouse = () => {
 
     const changeState = (bool) => setLoggedin(bool);
 
-      if (localStorage.getItem("activeUser")){
+      if (localStorage.getItem("react_Roundhouse_user")){
         return (
             <>
                 <NavBar />

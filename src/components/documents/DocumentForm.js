@@ -71,7 +71,7 @@ import { useNavigate, useParams } from 'react-router-dom';
             isPaper: document.isPaper,
             access: document.access,
             note: document.note,
-            customerId: +localStorage.activeUser,
+            customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
             categoryId: document.categoryId
         })
@@ -83,7 +83,7 @@ import { useNavigate, useParams } from 'react-router-dom';
             isPaper: document.isPaper,
             access: document.access,
             note: document.note,
-            customerId: +localStorage.activeUser,
+            customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
             categoryId: document.categoryId
          })

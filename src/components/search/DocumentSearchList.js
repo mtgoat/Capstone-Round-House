@@ -16,21 +16,21 @@ export const DocumentSearchList = () => {
         // console.log("DocumentList: useEffect - getDocuments")
         getDocuments()
     }, [])
-    const documehtsByUser = documents.filter(document => document.customerId === +localStorage.activeUser)
+
 
  // useEffect dependency array with dependencies - will run if dependency changes (state)
   // searchTerms will cause a change
   useEffect(() => {
     if (searchTerms !== ""){
       // If the search field is not blank, display matching animals
-      const subset = documehtsByUser.filter(document => document.name.toLowerCase().includes(searchTerms.toLowerCase()))
+      const subset = documents.filter(document => document.name.toLowerCase().includes(searchTerms.toLowerCase()))
       setFiltered(subset)
     } else {
             // If the search field is blank, display all animals
             setFiltered(undefined)
             
     }
-  }, [searchTerms, documehtsByUser])
+  }, [searchTerms, documents])
   console.log("this is filteredDocuments", filteredDocuments)
 return (
     <div className="documents">

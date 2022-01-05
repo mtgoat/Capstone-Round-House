@@ -20,20 +20,21 @@ export const DocumentList = (props) => {
     // console.log("DocumentList: useEffect - getDocuments")
     getDocuments()
 }, [])
-   const documehtsByUser = documents.filter(document => document.customerId === +localStorage.activeUser)
+  
 
 return (
     <div className="documents">
    
    {
    props.id===undefined ? 
-   documehtsByUser.map(document => {
+   documents.map(document => {
         return <DocumentCard key={document.id} document={document} />
       }): 
-      documehtsByUser.filter(document => document.situationId === props.id)
+      documents.filter(document => document.situationId === props.id)
       .map(document => {
         return <DocumentCard key={document.id} document={document} />})
     }
+
   </div> 
 )
 
