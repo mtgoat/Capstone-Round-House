@@ -40,32 +40,17 @@ export const DocumentCard2 = ({document}) => {
         })
     }
   return (
-  <section className="document">
-    <Table responsive="sm">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Document name</th>
-          <th>Storage location</th>
-          <th>Note</th>
-          <th>Situation</th>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
-         <tr>
-           <tb></tb>
-         <tb className="document__name">Name: {document.name}</tb>
-      {document.isPaper? <tb className="document__paper">Format: paper copy</tb>: <tb className="document__digital">Format: digital copy</tb>}
-      <tb className="document__access">Storage Location: {document.access}</tb>
-      <tb className="document__note">Note: {document.note}</tb>
-      {document.situationId === "" ? <tb className="document__situation">Situation: no siguation assigned</tb>: <tb className="document__situation">Situation: {document.situation.name}</tb>}
-      {document.categoryId === "" ? <tb className="document__category">Category: no category assigned</tb>: <tb className="document__category">category: {document.category.name}</tb>}
-      <Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
-      <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button>
-          </tr>
-        </tbody>
-      </Table>
-  </section>
+    <tr key={document.id}>
+    <td> {document.name}</td>
+    {document.isPaper? <td className="document__paper">paper copy</td>: <td className="document__digital">digital copy</td>}
+    <td> {document.access}</td>
+    <td>{document.note}</td>
+    {document.situationId === "" ? <td className="document__situation">no siguation assigned</td>: <td className="document__situation">{document.situation.name}</td>}
+    {document.categoryId === "" ? <td className="document__category">no category assigned</td>: <td className="document__category">{document.category.name}</td>}
+    <td>{document.rating}</td>
+    <td><Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
+  <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button></td>
+  </tr>
+  
   )
 }
