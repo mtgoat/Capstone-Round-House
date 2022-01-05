@@ -6,9 +6,16 @@ import { CategoryContext } from "../categories/CategoryProvider";
 import "./Document.css";
 import { useNavigate, useParams } from 'react-router-dom';
 
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
+
  export const DocumentForm = () => {
    //wait for data before button is active
    const [isLoading, setIsLoading] = useState(true);
+
+   //this is for rating
+   const [ratingS, setRatingS] = React.useState(2)
 
      //this is for the add document//
      const { addDocument, getDocumentById, updateDocument } = useContext(DocumentContext)
@@ -73,7 +80,8 @@ import { useNavigate, useParams } from 'react-router-dom';
             note: document.note,
             customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
-            categoryId: document.categoryId
+            categoryId: document.categoryId,
+            rating: ratingS
         })
         .then(() => navigate("/"))
                      }else{
@@ -85,7 +93,8 @@ import { useNavigate, useParams } from 'react-router-dom';
             note: document.note,
             customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
-            categoryId: document.categoryId
+            categoryId: document.categoryId,
+            rating: ratingS
          })
          .then(() => navigate("/"))
             }
@@ -179,6 +188,24 @@ return (
                 </select>
             </div>
     </fieldset>
+
+    <fieldset>
+    <Box
+      sx={{
+        '& > legend': { mt: 2 },
+      }}
+    >
+      <Typography component="legend">Importace Rating</Typography>
+      <Rating
+        name="simple-controlled"
+        value={ratingS}
+        onChange={(handleControlledInputChange, newRating) => {
+          setRatingS(newRating);
+        }}
+      />
+      </Box>
+    </fieldset>
+
 
           <button className="btn btn-primary" 
             onClick={ event => {
