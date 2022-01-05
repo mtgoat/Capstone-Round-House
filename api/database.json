@@ -16,15 +16,15 @@
   "situations": [
     {
       "id": 1,
-      "name": "Short-term medical care situation"
+      "name": "Short-term medical care"
     },
     {
       "id": 2,
-      "name": "Long-term medical care situation"
+      "name": "Long-term medical care"
     },
     {
       "id": 3,
-      "name": "Incapaciated medical care situation"
+      "name": "Assisted Living"
     },
     {
       "id": 4,
@@ -58,7 +58,8 @@
       "note": "please look under healthcare proxy",
       "customerId": 1,
       "situationId": 2,
-      "categoryId": 3
+      "categoryId": 3,
+      "rating": 0
     },
     {
       "id": 2,
@@ -68,17 +69,19 @@
       "note": "it is also online",
       "customerId": 1,
       "situationId": 1,
-      "categoryId": 1
+      "categoryId": 1,
+      "rating": 0
     },
     {
       "id": 3,
-      "name": "List of family contact",
+      "name": "List of family contacts",
       "isPaper": true,
       "access": "in the desk drawer",
       "note": "please look under healthcare proxy",
       "customerId": 1,
       "situationId": 4,
-      "categoryId": 4
+      "categoryId": 4,
+      "rating": 0
     },
     {
       "id": 4,
@@ -88,7 +91,8 @@
       "note": "sign in with my gmail ",
       "customerId": 2,
       "situationId": 4,
-      "categoryId": 4
+      "categoryId": 4,
+      "rating": 0
     }
   ]
 }

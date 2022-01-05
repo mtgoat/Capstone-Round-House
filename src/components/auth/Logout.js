@@ -14,15 +14,14 @@ export const Logout = (props) =>{
     const handleLogout = (e) => {
         e.preventDefault()
 
-        localStorage.removeItem("activeUser")
-                
-        navigate("/") 
-        window.location.reload(false);
+        localStorage.removeItem("react_Roundhouse_user")
+                window.location.reload(false);
+                navigate("/") 
         }
 
     return (
         <>
-        <Button id="logout-button" className=" btn-secondary" onClick={handleLogout}>Log Out</Button>
+        <Button id="logout-button" className="btn-success" onClick={handleLogout}>Log Out</Button>
         </>
     )
 }

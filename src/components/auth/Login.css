@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+margin: 1em;
 }
 
 .form--Regi {
@@ -15,3 +15,21 @@ body {
     border: rgb(104, 159, 161) solid 0.1rem;
     border-radius: 2em;
 }
+
+.pic--signIn {
+    max-width: 100%;
+    height: auto;
+}
+
+.form--signIn{
+    padding:2em;
+    margin: 3em  0em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title--signIn{
+    margin-top: 5em;
+    text-align: center;
+}
+

@@ -17,6 +17,7 @@ export const DocumentSearchList = () => {
         getDocuments()
     }, [])
 
+
  // useEffect dependency array with dependencies - will run if dependency changes (state)
   // searchTerms will cause a change
   useEffect(() => {

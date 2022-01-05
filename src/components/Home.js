@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
-import { DocumentList } from "./documents/DocumentList";
+import { DocumentList, DocumentList2 } from "./documents/DocumentList";
 
 
 export const Home = () => {
@@ -26,11 +26,11 @@ export const Home = () => {
                     </Nav.Item>
 
                     <Nav.Item>
-                    <Nav.Link eventKey="incapacited">Incapacited Medical Care Situation</Nav.Link>
+                    <Nav.Link eventKey="incapacited">Assisted Living Situation</Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>
-                    <Nav.Link eventKey="other">Other Situation</Nav.Link>
+                    <Nav.Link eventKey="other">Other Situations(i.e. traveing etc.) </Nav.Link>
                     </Nav.Item>
 
                 </Nav>
@@ -39,7 +39,7 @@ export const Home = () => {
                 <Col sm={9}>
                 <Tab.Content>
                     <Tab.Pane eventKey="all">
-                    <DocumentList />
+                    <DocumentList2 />
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="short">

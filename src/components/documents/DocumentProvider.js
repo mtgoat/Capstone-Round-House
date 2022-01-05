@@ -6,9 +6,10 @@ export const DocumentContext = createContext()
 // This component establishes what data can be used.
 export const DocumentProvider = (props) => {
     const [documents, setDocuments] = useState([])
+    const currentUser = localStorage.getItem("react_Roundhouse_user")
 
     const getDocuments = () => {
-        return fetch("http://localhost:8088/documents?_expand=situation&_expand=category")
+        return fetch(`http://localhost:8088/documents?customerId=${currentUser}&_expand=situation&_expand=category`)
         .then(res =>  res.json())
         .then(setDocuments)
     }
