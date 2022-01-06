@@ -5,13 +5,15 @@ import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 import { DocumentList, DocumentList2 } from "./documents/DocumentList";
 
 
+
 export const Home = () => {
 
    return ( 
     <Container>
+       
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
-                <Col sm={3}>
+                <Col sm >
                 <Nav variant="pills" className="flex-column">
                     <Nav.Item>
                     <Nav.Link eventKey="all">All Added Documents</Nav.Link>
@@ -30,7 +32,7 @@ export const Home = () => {
                     </Nav.Item>
 
                     <Nav.Item>
-                    <Nav.Link eventKey="other">Other Situations(i.e. traveing etc.) </Nav.Link>
+                    <Nav.Link eventKey="other">Other Situations(i.e. traveling etc.) </Nav.Link>
                     </Nav.Item>
 
                 </Nav>

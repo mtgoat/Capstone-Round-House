@@ -1,5 +1,5 @@
 body {
-margin: 1em;
+margin: 1rem;
 }
 
 .form--Regi {
@@ -16,6 +16,10 @@ margin: 1em;
     border-radius: 2em;
 }
 
+.link--register--name{
+    text-align: center;
+}
+
 .pic--signIn {
     max-width: 100%;
     height: auto;
@@ -29,7 +33,7 @@ margin: 1em;
 }
 
 .title--signIn{
-    margin-top: 5em;
+    margin-top: 5rem;
     text-align: center;
 }
 

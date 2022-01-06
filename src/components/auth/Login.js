@@ -72,7 +72,7 @@ export const Login = (props) => {
                             </Form>
                         
                             <section className="link--register">
-                                <Link to="/register">Not a member yet?</Link>
+                                <Link to="/register" className="link--register--name">Not a member yet?</Link>
                             </section>
                         
                         </section>
@@ -82,7 +82,7 @@ export const Login = (props) => {
                     </Col>
                     <Col sm={6}>
                      <section className="right-pic">
-                     <p className="title--signIn" >Roundhouse</p>
+                     <h2 className="title--signIn" >Roundhouse</h2>
                      <img className="pic--signIn" src='\img\SSmallLogoBaltimore_and_Ohio_Railroad,_Martinsburg_West_Roundhouse,_East_End_of_Race_and_Martin_Streets,_Martinsburg,_Berkeley_County,_WV_HAER_WVA,2-MART,1A-_(sheet_2_of_5).png'  alt="Baltimore_and_Ohio_Railroad_Martinsburg_Roundhouse" />
                    
                     </section>
