@@ -3,7 +3,7 @@ import  NavBar  from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
 import "./RoundHouse.css";
 import { Routes, Route, Navigate } from "react-router";
-import { Login } from "./components/auth/Login";
+import { Login } from "./components/auth/Login2";
 import { Register } from "./components/auth/Register";
 import { CustomerContext } from "./components/customers/CustomerProvider";
 import { Logout } from "./components/auth/Logout";

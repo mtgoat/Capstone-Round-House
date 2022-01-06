@@ -3,6 +3,7 @@ import "./Home.css";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
 import { DocumentList, DocumentList2 } from "./documents/DocumentList";
+// import { PDFFIle } from "./pdf/PDFFile";
 
 
 
@@ -10,7 +11,7 @@ export const Home = () => {
 
    return ( 
     <Container>
-       
+            {/* <PDFFIle /> */}
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
                 <Col sm >
