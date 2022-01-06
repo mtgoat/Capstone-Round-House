@@ -5,10 +5,18 @@ import { SituationContext } from "../situations/SituationProvider";
 import { CategoryContext } from "../categories/CategoryProvider";
 import "./Document.css";
 import { useNavigate, useParams } from 'react-router-dom';
+import { Button, Table } from "react-bootstrap";
+
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 
  export const DocumentForm = () => {
    //wait for data before button is active
    const [isLoading, setIsLoading] = useState(true);
+
+      //this is for rating
+      const [ratingS, setRatingS] = React.useState(2)
 
      //this is for the add document//
      const { addDocument, getDocumentById, updateDocument } = useContext(DocumentContext)
@@ -21,13 +29,13 @@ import { useNavigate, useParams } from 'react-router-dom';
      console.log(documentId)
      const navigate = useNavigate ();
 
-//     // const handleFirstNameInput = (event) => {
-//     //     let copyOfState = {...employee}
-
-//     //     copyOfState.firstName = event.target.value
-
-//     //     setEmployee(copyOfState)
-//     // }
+     //This is for the scoring
+      const handleControlledScoreInputChange = (event) => {
+        let copyOfdocument = {...document}
+        setRatingS(event.target.value) 
+        copyOfdocument.rating = ratingS
+        setDocument(copyOfdocument)
+    }
 
 
     const handleControlledInputChange = (event) => {
@@ -73,7 +81,8 @@ import { useNavigate, useParams } from 'react-router-dom';
             note: document.note,
             customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
-            categoryId: document.categoryId
+            categoryId: document.categoryId,
+            rating: +ratingS
         })
         .then(() => navigate("/"))
                      }else{
@@ -85,7 +94,8 @@ import { useNavigate, useParams } from 'react-router-dom';
             note: document.note,
             customerId: +localStorage.react_Roundhouse_user,
             situationId: document.situationId,
-            categoryId: document.categoryId
+            categoryId: document.categoryId,
+            rating: document.rating
          })
          .then(() => navigate("/"))
             }
@@ -180,13 +190,35 @@ return (
             </div>
     </fieldset>
 
-          <button className="btn btn-primary" 
+    <fieldset>
+    <Box
+      sx={{
+        '& > legend': { mt: 2 },
+      }}
+    >
+      <Typography component="legend">Importace Rating</Typography>
+      <Rating
+        name="Importace Rating"
+        value={ratingS}
+        onChange={handleControlledScoreInputChange}
+      />
+      </Box>
+    </fieldset>
+
+
+          <Button className="btn btn-primary" 
+            onClick={ event => {
+                event.preventDefault() // Prevent browser from submitting the form and refreshing the page
+                handeClickNewDocument()
+            }}></Button>
+
+          <Button className="btn btn-primary" 
             onClick={ event => {
                 event.preventDefault() // Prevent browser from submitting the form and refreshing the page
                 handeClickNewDocument()
             }}>
             {documentId ? <> Update information</>: <>Save New Document Information</>}
-          </button>
+          </Button>
 </form>
 
 )
