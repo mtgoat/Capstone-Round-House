@@ -27,7 +27,7 @@ export const DocumentCard = ({document}) => {
         <div className="document__note">Note: <b>{document.note}</b></div>
         {document.situationId === "" ? <div className="document__situation">Situation: no siguation assigned</div>: <div className="document__situation">Situation: <b>{document.situation.name}</b></div>}
         {document.categoryId === "" ? <div className="document__category">Category: no category assigned</div>: <div className="document__category">category: <b>{document.category.name}</b></div>}
-        <div>Rating: <Rating value={ratingS} disabled ></Rating></div>
+        <div>Rating: <Rating value={ratingS} name="read-only" readOnly></Rating></div>
         <Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
         <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button>
     </section>
@@ -55,7 +55,7 @@ export const DocumentCard2 = ({document}) => {
     <td>{document.note}</td>
     {document.situationId === "" ? <td className="document__situation">no siguation assigned</td>: <td className="document__situation">{document.situation.name}</td>}
     {document.categoryId === "" ? <td className="document__category">no category assigned</td>: <td className="document__category">{document.category.name}</td>}
-    <td><Rating value={ratingS} disabled></Rating></td>
+    <td><Rating value={ratingS} name="read-only" readOnly></Rating></td>
     <td><Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
   <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button></td>
   </tr>
