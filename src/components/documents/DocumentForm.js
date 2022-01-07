@@ -45,12 +45,36 @@ export const DocumentForm = () => {
         setDocument(copyOfdocument)
     }
 
+    //this is for the loading image 
+
+
+        const uploadImage = () => {
+   
+            fetch("https://api.cloudinary.com/v1_1/newforce-cohort5/image/upload",
+            {
+              method:"post",
+              body: data
+            })
+            .then(resp => resp.json())
+            .then(data => {
+              setUrl(data.url)
+              let copyOfdocument = { ...document }
+            copyOfdocument.imageURL = data.url
+            setDocument(copyOfdocument)
+            
+            })
+            .catch(err => console.log ("this is the error message", err))
+            console.log("this is data", data)
+
+            
+          }
+
+
     const handleControlledInputChange = (event) => {
 
         let newDocument = { ...document }
 
         newDocument[event.target.id] = event.target.value
-
 
         setDocument(newDocument)
     }
@@ -94,14 +118,6 @@ export const DocumentForm = () => {
                 })
                     .then(() => navigate("/"))
             } else {
-                // this is for the image updlad 
-                fetch("https://api.cloudinary.com/v1_1/newforce-cohort5/image/upload",
-                {
-                  method:"post",
-                  body: data
-                })
-                .then(resp => resp.json())
-                .then(data => {
                  //POST - add 
                  
                 addDocument({
@@ -112,13 +128,10 @@ export const DocumentForm = () => {
                     customerId: +localStorage.react_Roundhouse_user,
                     situationId: document.situationId,
                     categoryId: document.categoryId,
-                    rating: document.rating,
-                    imageURL:data.url
+                    rating: +ratingS,
+                    imageURL:url
                 })
-            })
-                .catch(err => console.log ("this is the error message", err)).then(() => navigate("/"))
-                console.log("this is data", data)
-                    
+                .then(() => navigate("/"))
             }
         }
     }
@@ -214,8 +227,8 @@ export const DocumentForm = () => {
             <fieldset>
                 <div>
 
-                    <input type="file" id="imageURL"   onChange ={(e)=> setImage(e.target.files[0])}></input>
-                    <Button id="upload-button" className="btn-success"></Button>
+                    <input type="file" id="imageURL"  onChange ={(e)=> setImage(e.target.files[0])}></input>
+                    <Button id="upload-button" className="btn-success" onClick={uploadImage}>Upload an image</Button>
                     
                 </div>
             </fieldset>

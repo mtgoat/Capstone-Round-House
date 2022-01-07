@@ -19,14 +19,13 @@ const App = () => {
     .then(resp => resp.json())
     .then(data => {
       setUrl(data.url)
+      console.log(data.url)
     })
     .catch(err => console.log ("this is the error message", err))
     console.log("this is data", data)
   }
 
-  const downloadImage = () => {
 
-  }
   return (
     <div>
       <div>
@@ -36,8 +35,7 @@ const App = () => {
       <div>
           <h1>Uploaded image will be displayed here</h1>
           <img src={url} alt="uploaded" width="400px"  />
-          <h1>the download here</h1>
-          <button onClick={downloadImage}>download</button>
+          
           {/* <%= link_to("Download", cl_private_download_url("my_private_image", :jpg, :attachment => true)) %> */}
           
     </div>
