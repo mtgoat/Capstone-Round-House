@@ -59,7 +59,8 @@
       "customerId": 1,
       "situationId": 2,
       "categoryId": 3,
-      "rating": 5
+      "rating": 5,
+      "imageURL": ""
     },
     {
       "id": 2,
@@ -70,7 +71,8 @@
       "customerId": 1,
       "situationId": 1,
       "categoryId": 1,
-      "rating": 3
+      "rating": 3,
+      "imageURL": ""
     },
     {
       "id": 3,
@@ -81,7 +83,8 @@
       "customerId": 1,
       "situationId": 4,
       "categoryId": 4,
-      "rating": 1
+      "rating": 1,
+      "imageURL": ""
     },
     {
       "id": 4,
@@ -92,7 +95,20 @@
       "customerId": 2,
       "situationId": 4,
       "categoryId": 4,
-      "rating": 1
+      "rating": 1,
+      "imageURL": ""
+    },
+    {
+      "name": "Testing",
+      "isPaper": false,
+      "access": "Test",
+      "note": "test",
+      "customerId": 2,
+      "situationId": 4,
+      "categoryId": 4,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png",
+      "id": 5
     }
   ]
 }
