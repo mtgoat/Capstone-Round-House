@@ -62,7 +62,7 @@ export const Home = () => {
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="other">
-                    <DocumentList id={4}/>
+                    <DocumentList2 id={4}/>
                     </Tab.Pane>
 
                 </Tab.Content>

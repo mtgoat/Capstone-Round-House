@@ -46,8 +46,7 @@ export const DocumentForm = () => {
     }
 
     //this is for the loading image 
-
-
+    
         const uploadImage = () => {
    
             fetch("https://api.cloudinary.com/v1_1/newforce-cohort5/image/upload",
@@ -64,11 +63,8 @@ export const DocumentForm = () => {
             
             })
             .catch(err => console.log ("this is the error message", err))
-            console.log("this is data", data)
-
-            
+            console.log("this is data", data)           
           }
-
 
     const handleControlledInputChange = (event) => {
 
@@ -79,14 +75,6 @@ export const DocumentForm = () => {
         setDocument(newDocument)
     }
 
-    // This is for a checkbok eventhandler const handleCheckBoxControlledInputChange = (event) => {
-
-    //     let newDocument = { ...document }
-
-    //     newDocument[event.target.id] = event.target.checked
-    //     setDocument(newDocument)
-    // }
-
     const handeClickNewDocument = () => {
 
         if (document.name === "" || document.access === "" || document.note === "") {
@@ -94,6 +82,8 @@ export const DocumentForm = () => {
         } else {
             //disable the button - no extra clicks
             setIsLoading(true);
+
+  
             const situationId = parseInt(document.situationId)
             const categoryId = parseInt(document.categoryId)
             const isPaper = JSON.parse(document.isPaper)
@@ -132,6 +122,7 @@ export const DocumentForm = () => {
                     imageURL:url
                 })
                 .then(() => navigate("/"))
+
             }
         }
     }
@@ -202,14 +193,7 @@ export const DocumentForm = () => {
                     </select>
                 </div>
             </fieldset>
-
-            {/* checkbox example <fieldset>
-                <div className="form-group">
-                     <label htmlFor="manager">If you are a manager, please check the box here: </label>
-                     <input onChange={ handleCheckBoxControlledInputChange} type="checkbox" id="manager" name="manager" value={employee.manager}></input>
-                   
-                </div>
-    </fieldset> */}
+   
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="category">Choose a category: </label>
@@ -257,7 +241,6 @@ export const DocumentForm = () => {
                 {documentId ? <> Update information</> : <>Save New Document Information</>}
             </Button>
         </form>
-
     )
 }
 

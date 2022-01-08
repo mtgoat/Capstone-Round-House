@@ -57,8 +57,8 @@ export const DocumentCard2 = ({document}) => {
     {document.categoryId === "" ? <td className="document__category">no category assigned</td>: <td className="document__category">{document.category.name}</td>}
     <td><Rating value={ratingS} name="read-only" readOnly></Rating></td>
     <td><Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
-  <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button></td>
-  </tr>
+    <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button></td>
+    </tr>
   
   )
 }
