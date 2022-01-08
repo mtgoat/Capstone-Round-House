@@ -24,7 +24,7 @@ export const Login = (props) => {
         existingUserCheck()
             .then(userExists => {
                 if (userExists) {
-                    localStorage.setItem("react_Roundhouse_user", userExists.firstName)
+                    localStorage.setItem("react_Roundhouse_user", JSON.stringify(userExists))
                     props.setLoggedin(true)
                     navigate("/") // change to navigate("/")
                 } else {

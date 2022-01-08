@@ -19,7 +19,7 @@ class NavBar extends Component{
                     <Nav.Link href="/documents/create/">Add New Document</Nav.Link>
                     <Nav.Link href="/search">Search</Nav.Link>
                   </Nav>
-                    <div className="navbar--howdy"><Welcome name={localStorage.getItem('react_Roundhouse_user')} /></div> 
+                    <div className="navbar--howdy"><Welcome name={JSON.parse(localStorage.getItem('react_Roundhouse_user')).firstName} /></div> 
                     <Logout/>
                   </Navbar.Collapse>  
             </Container>
