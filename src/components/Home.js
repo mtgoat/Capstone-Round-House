@@ -1,3 +1,4 @@
+// after logged in, to dispaly the homepage/dashboard
 import React from "react";
 import "./Home.css";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
@@ -8,6 +9,9 @@ import { DocumentList, DocumentList2 } from "./documents/DocumentList";
 
 
 export const Home = () => {
+ 
+ 
+
 
    return ( 
     <Container>

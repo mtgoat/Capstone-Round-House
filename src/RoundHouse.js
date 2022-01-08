@@ -1,9 +1,10 @@
+//Purpose:  check if a user is logged in then display NavBar and Application View otherwise it goes to log in or register
 import React, { useState, useContext, useEffect } from "react";
 import  NavBar  from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
 import "./RoundHouse.css";
 import { Routes, Route, Navigate } from "react-router";
-import { Login } from "./components/auth/Login2";
+import { Login } from "./components/auth/Login";
 import { Register } from "./components/auth/Register";
 import { CustomerContext } from "./components/customers/CustomerProvider";
 import { Logout } from "./components/auth/Logout";

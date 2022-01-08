@@ -1,3 +1,5 @@
+//this is an example react code to add an image data to the cloudinary api 
+
 import React, { useState } from 'react';
 
 const App = () => {

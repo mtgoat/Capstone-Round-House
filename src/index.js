@@ -1,3 +1,4 @@
+//purpose: the main domino or main branch that display RoundHouse
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";

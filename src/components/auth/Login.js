@@ -22,9 +22,9 @@ export const Login = (props) => {
         e.preventDefault()
 
         existingUserCheck()
-            .then(exists => {
-                if (exists) {
-                    localStorage.setItem("react_Roundhouse_user", exists.id)
+            .then(userExists => {
+                if (userExists) {
+                    localStorage.setItem("react_Roundhouse_user", userExists.firstName)
                     props.setLoggedin(true)
                     navigate("/") // change to navigate("/")
                 } else {
