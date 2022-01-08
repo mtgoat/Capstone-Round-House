@@ -21,7 +21,11 @@ export const Home = () => {
                 <Col sm >
                 <Nav variant="pills" className="flex-column">
                     <Nav.Item>
-                    <Nav.Link eventKey="all">All Added Documents</Nav.Link>
+                    <Nav.Link eventKey="allDoc">All Added Documents</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                    <Nav.Link eventKey="allImg">All Added Images</Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>
@@ -45,8 +49,12 @@ export const Home = () => {
 
                 <Col sm={9}>
                 <Tab.Content>
-                    <Tab.Pane eventKey="all">
+                    <Tab.Pane eventKey="allDoc">
                     <DocumentList2 />
+                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="allImg">
+                    <p>All images go here</p>
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="short">
@@ -62,7 +70,7 @@ export const Home = () => {
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="other">
-                    <DocumentList2 id={4}/>
+                    <DocumentList id={4}/>
                     </Tab.Pane>
 
                 </Tab.Content>
