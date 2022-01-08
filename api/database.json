@@ -59,7 +59,8 @@
       "customerId": 1,
       "situationId": 2,
       "categoryId": 3,
-      "rating": 0
+      "rating": 5,
+      "imageURL": ""
     },
     {
       "id": 2,
@@ -70,7 +71,8 @@
       "customerId": 1,
       "situationId": 1,
       "categoryId": 1,
-      "rating": 0
+      "rating": 3,
+      "imageURL": ""
     },
     {
       "id": 3,
@@ -79,9 +81,10 @@
       "access": "in the desk drawer",
       "note": "please look under healthcare proxy",
       "customerId": 1,
-      "situationId": 2,
-      "categoryId": 1,
-      "rating": 4
+      "situationId": 4,
+      "categoryId": 4,
+      "rating": 1,
+      "imageURL": ""
     },
     {
       "id": 4,
@@ -92,17 +95,19 @@
       "customerId": 2,
       "situationId": 4,
       "categoryId": 4,
-      "rating": 0
+      "rating": 1,
+      "imageURL": ""
     },
     {
-      "name": "Aki",
+      "name": "Testing",
       "isPaper": false,
-      "access": "Filing cabinet",
-      "note": "Filing cabinet",
-      "customerId": 1,
-      "situationId": 1,
-      "categoryId": 1,
-      "rating": 2,
+      "access": "Test",
+      "note": "test",
+      "customerId": 2,
+      "situationId": 4,
+      "categoryId": 4,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png",
       "id": 5
     }
   ]

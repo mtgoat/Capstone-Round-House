@@ -1,3 +1,4 @@
+//Purpose:  check if a user is logged in then display NavBar and Application View otherwise it goes to log in or register
 import React, { useState, useContext, useEffect } from "react";
 import  NavBar  from "./components/nav/NavBar";
 import { ApplicationViews } from "./components/ApplicationViews";
