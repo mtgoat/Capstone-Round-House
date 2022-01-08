@@ -37,6 +37,8 @@ export const DocumentForm = () => {
     console.log(documentId)
     const navigate = useNavigate();
 
+    const currentUser = JSON.parse(localStorage.getItem('react_Roundhouse_user')).id
+
     //This is for the scoring
     const handleControlledScoreInputChange = (event) => {
         let copyOfdocument = { ...document }
@@ -100,7 +102,7 @@ export const DocumentForm = () => {
                     isPaper: document.isPaper,
                     access: document.access,
                     note: document.note,
-                    customerId: +localStorage.react_Roundhouse_user,
+                    customerId: currentUser,
                     situationId: document.situationId,
                     categoryId: document.categoryId,
                     rating: +ratingS
@@ -115,7 +117,7 @@ export const DocumentForm = () => {
                     isPaper: document.isPaper,
                     access: document.access,
                     note: document.note,
-                    customerId: +localStorage.react_Roundhouse_user,
+                    customerId: currentUser,
                     situationId: document.situationId,
                     categoryId: document.categoryId,
                     rating: +ratingS,
