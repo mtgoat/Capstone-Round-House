@@ -89,10 +89,12 @@ export const DocumentForm = () => {
             const situationId = parseInt(document.situationId)
             const categoryId = parseInt(document.categoryId)
             const isPaper = JSON.parse(document.isPaper)
+            const isDigital = JSON.parse(document.isDigital)
 
             document.situationId = situationId
             document.categoryId = categoryId
             document.isPaper = isPaper
+            document.isDigital = isDigital
 
             if (documentId) {
                 //PUT - update
@@ -100,12 +102,14 @@ export const DocumentForm = () => {
                     id: document.id,
                     name: document.name,
                     isPaper: document.isPaper,
+                    isDigital:document.isDigital,
                     access: document.access,
                     note: document.note,
                     customerId: currentUser,
                     situationId: document.situationId,
                     categoryId: document.categoryId,
-                    rating: +ratingS
+                    rating: +ratingS,
+                    imageURL:url
 
                 })
                     .then(() => navigate("/"))
@@ -115,6 +119,7 @@ export const DocumentForm = () => {
                 addDocument({
                     name: document.name,
                     isPaper: document.isPaper,
+                    isDigital:document.isDigital,
                     access: document.access,
                     note: document.note,
                     customerId: currentUser,
@@ -214,7 +219,7 @@ export const DocumentForm = () => {
                 <div>
 
                     <input type="file" id="imageURL"  onChange ={(e)=> setImage(e.target.files[0])}></input>
-                    <Button id="upload-button" className="btn-success" onClick={uploadImage}>Upload an image</Button>
+                    <Button id="upload-button" className="btn-success" onClick={uploadImage} >Upload an image</Button>
                     
                 </div>
             </fieldset>

@@ -3,7 +3,7 @@ import React from "react";
 import "./Home.css";
 import { Row, Col, Nav, Tab, Container } from "react-bootstrap";
 
-import { DocumentList, DocumentList2 } from "./documents/DocumentList";
+import { DocumentList, DocumentList2, DocumentList3 } from "./documents/DocumentList";
 // import { PDFFIle } from "./pdf/PDFFile";
 
 
@@ -54,7 +54,7 @@ export const Home = () => {
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="allImg">
-                    <p>All images go here</p>
+                    <DocumentList3/>
                     </Tab.Pane>
 
                     <Tab.Pane eventKey="short">

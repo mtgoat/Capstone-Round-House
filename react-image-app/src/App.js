@@ -36,7 +36,7 @@ const App = () => {
       </div>
       <div>
           <h1>Uploaded image will be displayed here</h1>
-          <img src={url} alt="uploaded" width="400px"  />
+          <img src={url} alt="uploaded" width="400px"/>
           
           {/* <%= link_to("Download", cl_private_download_url("my_private_image", :jpg, :attachment => true)) %> */}
           
