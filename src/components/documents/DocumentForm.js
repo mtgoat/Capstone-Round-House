@@ -77,6 +77,15 @@ export const DocumentForm = () => {
         setDocument(newDocument)
     }
 
+    const handleCheckBoxControlledInputChange = (event) => {
+
+        let newDocument = { ...document }
+
+        newDocument[event.target.id] = event.target.checked
+
+        setDocument(newDocument)
+    }
+
     const handeClickNewDocument = () => {
 
         if (document.name === "" || document.access === "" || document.note === "") {
@@ -149,7 +158,7 @@ export const DocumentForm = () => {
                 }
             })
     }, [])
-
+console.log("document.categoryId",document.categoryId)
     return (
 
         <form className="documentForm">
@@ -165,11 +174,15 @@ export const DocumentForm = () => {
             {/* this is for Ispaper*/}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="isPaper">Type of Document Format </label>
-                    <select name="isPaper" id="isPaper" onChange={handleControlledInputChange} >
-                        <option id="isPaper" name="isPaper" value="true">Paper format</option>
-                        <option id="isPaper" name="isPaper" value="false">Digital format</option>
-                    </select>
+                    <label htmlFor="isPaper">Do you have a paper copy? If yes, check this box </label>
+                    <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isPaper" name="isPaper" value={document.isPaper}></input>
+                    </div>
+            </fieldset>  
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="isPaper">Do you have a digital copy? If yes, check this box </label>
+                    <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isDigital" name="isDigital" value={document.isDigital}></input>
                 </div>
             </fieldset>
 
@@ -190,7 +203,7 @@ export const DocumentForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="situation">Choose a situation: </label>
-                    <select onChange={handleControlledInputChange} defaultValue={document.situationId} name="situationId" id="situationId" className="form-control">
+                    <select onChange={handleControlledInputChange} value={document.situationId} name="situationId" id="situationId" className="form-control">
                         <option value="0">Select a situation</option>
                         {situations.map(l => (
                             <option key={l.id} value={l.id} >
@@ -204,7 +217,7 @@ export const DocumentForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="category">Choose a category: </label>
-                    <select onChange={handleControlledInputChange} defaultValue={document.categoryId} name="categoryId" id="categoryId" className="form-control">
+                    <select onChange={handleControlledInputChange} value={document.categoryId} name="categoryId" id="categoryId" className="form-control">
                         <option value="0">Select a category</option>
                         {categories.map(l => (
                             <option key={l.id} value={l.id} >

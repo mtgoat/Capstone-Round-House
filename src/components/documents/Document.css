@@ -11,3 +11,9 @@
       border: rgb(104, 159, 161) solid 0.1rem;
       border-radius: 2em;
   }
+
+  .card__images {
+    width:171;
+    height:180;
+    
+  }

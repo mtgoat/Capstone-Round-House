@@ -1,7 +1,7 @@
 //purpose: A) to print an indidicual card template for each object at documents array in API B) to delete and to edit indiviual document info
 import { Rating } from "@mui/material";
 import React, {useContext, useState} from "react";
-import { Button, Table, Modal, ModalFooter, Row, Col, Card } from "react-bootstrap";
+import { Button, Table, Modal, ModalFooter, Row, Col, Card, CardGroup } from "react-bootstrap";
 import ModalHeader from "react-bootstrap/esm/ModalHeader";
 import { useNavigate } from "react-router-dom";
 import './Document.css';
@@ -121,11 +121,19 @@ export const DocumentCard3 = ({document}) => {
     }
 
     return (
-      <Row xs={1} md={2} className="g-4">
-        <Col>
+      <CardGroup>
+        <Card>
            {document.imageURL === ""? <></>:<Card> <Card.Title>{document.name}</Card.Title>
-              <Card.Img variant="top" src={document.imageURL} /></Card> }
-        </Col>
-      </Row>
+              <Card.Img variant="top" src={document.imageURL} className="card__images" /></Card> }
+        </Card>
+      </CardGroup>
     )
 }
+
+// version 2 in the return       
+//<Row xs={1} md={2} className="g-4">
+// <Col>
+//    {document.imageURL === ""? <></>:<Card> <Card.Title>{document.name}</Card.Title>
+//       <Card.Img variant="top" src={document.imageURL} /></Card> }
+// </Col>
+// </Row>

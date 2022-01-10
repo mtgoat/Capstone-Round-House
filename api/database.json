@@ -100,7 +100,7 @@
       "situationId": 4,
       "categoryId": 4,
       "rating": 1,
-      "imageURL": ""
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png"
     },
     {
       "id": 5,
@@ -127,6 +127,19 @@
       "rating": 5,
       "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png",
       "id": 6
+    },
+    {
+      "name": "Testing",
+      "isPaper": true,
+      "isDigital": true,
+      "access": "Test",
+      "note": "Test",
+      "customerId": 1,
+      "situationId": 4,
+      "categoryId": 4,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/dbgfbdjcbbrhpkrhfvq9.png",
+      "id": 7
     }
   ]
 }

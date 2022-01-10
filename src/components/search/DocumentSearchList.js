@@ -34,6 +34,7 @@ export const DocumentSearchList = () => {
   console.log("this is filteredDocuments", filteredDocuments)
 return (
     <div className="documents">
+
    {filteredDocuments === undefined ? <></> : filteredDocuments.map(document => {
         return <DocumentCard key={document.id} document={document} />
       })

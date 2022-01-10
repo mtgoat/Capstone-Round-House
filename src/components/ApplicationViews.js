@@ -13,6 +13,8 @@ import { DocumentSearchList } from "./search/DocumentSearchList";
 
 import { SituationProvider } from "./situations/SituationProvider";
 
+import { Testing } from "./suggestedDocuments/SuggestedDocumentList"
+
 export const ApplicationViews = () => {
 
     return (
@@ -26,6 +28,7 @@ export const ApplicationViews = () => {
                         <Route path="documents/create/*" element={<DocumentForm />} />
                         <Route path="documents/edit/:documentId/*" element={< DocumentForm />}/>
                         <Route path="search" element={<><DocumentSearch /><DocumentSearchList /></>} />
+                        <Route path="suggested" element={<Testing />} />
                     </Routes>
                 </CustomerProvider>
             </CategoryProvider>
