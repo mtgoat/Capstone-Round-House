@@ -9,7 +9,7 @@ export const DocumentSearch = () => {
 
     return ( 
       <>
-      Document search by a document name:
+      <p>Document search by a document name:</p>
       <input type="text"
         className="input--wide"
         onKeyUp={(event) => setSearchTerms(event.target.value)}

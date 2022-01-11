@@ -23,7 +23,12 @@ export const DocumentSearchList = () => {
   useEffect(() => {
     if (searchTerms !== ""){
       // If the search field is not blank, display matching animals
-      const subset = documents.filter(document => document.name.toLowerCase().includes(searchTerms.toLowerCase()))
+      const subset = documents.filter(document => 
+        document.name.toLowerCase().includes(searchTerms.toLowerCase()) || 
+        document.access.toLowerCase().includes(searchTerms.toLowerCase()) ||
+        document.note.toLowerCase().includes(searchTerms.toLowerCase()) ||
+        document.imageURL.toLowerCase().includes(searchTerms.toLowerCase())
+        )
       setFiltered(subset)
     } else {
             // If the search field is blank, display all animals
@@ -34,6 +39,7 @@ export const DocumentSearchList = () => {
   console.log("this is filteredDocuments", filteredDocuments)
 return (
     <div className="documents">
+
    {filteredDocuments === undefined ? <></> : filteredDocuments.map(document => {
         return <DocumentCard key={document.id} document={document} />
       })

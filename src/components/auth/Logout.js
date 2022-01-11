@@ -16,7 +16,8 @@ export const Logout = (props) =>{
 
         localStorage.removeItem("react_Roundhouse_user")
                 window.location.reload(false);
-                navigate("/") 
+                navigate("/");
+                window.location.reload(false); 
         }
 
     return (

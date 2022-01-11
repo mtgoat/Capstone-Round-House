@@ -54,18 +54,20 @@
       "id": 1,
       "name": "Living Will",
       "isPaper": true,
+      "isDigital": false,
       "access": "in the filing cabinet",
       "note": "please look under healthcare proxy",
       "customerId": 1,
       "situationId": 2,
       "categoryId": 3,
       "rating": 5,
-      "imageURL": ""
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641828075/lapqks0qirj16kxiqdzf.png"
     },
     {
       "id": 2,
       "name": "Medicare Card",
       "isPaper": true,
+      "isDigital": false,
       "access": "in the wallet",
       "note": "it is also online",
       "customerId": 1,
@@ -78,6 +80,7 @@
       "id": 3,
       "name": "List of family contacts",
       "isPaper": true,
+      "isDigital": false,
       "access": "in the desk drawer",
       "note": "please look under healthcare proxy",
       "customerId": 1,
@@ -88,19 +91,34 @@
     },
     {
       "id": 4,
-      "name": "Cat document",
-      "isPaper": false,
-      "access": "it is in my google doc",
+      "name": "Cat trust document",
+      "isPaper": true,
+      "isDigital": true,
+      "access": "in the desk drawer and also in my google doc",
+      "note": "sign in with my gmail ",
+      "customerId": 1,
+      "situationId": 4,
+      "categoryId": 4,
+      "rating": 1,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png"
+    },
+    {
+      "id": 5,
+      "name": "Pet Trust document",
+      "isPaper": true,
+      "isDigital": true,
+      "access": "in the desk drawer and also in my google doc",
       "note": "sign in with my gmail ",
       "customerId": 2,
       "situationId": 4,
       "categoryId": 4,
-      "rating": 1,
-      "imageURL": ""
+      "rating": 4,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641918988/nmhvvrwowvec1uysjwfo.png"
     },
     {
       "name": "Testing",
       "isPaper": false,
+      "isDigital": true,
       "access": "Test",
       "note": "test",
       "customerId": 2,
@@ -108,7 +126,140 @@
       "categoryId": 4,
       "rating": 5,
       "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png",
-      "id": 5
+      "id": 6
+    },
+    {
+      "name": "Testing",
+      "isPaper": true,
+      "isDigital": true,
+      "access": "Test",
+      "note": "Test",
+      "customerId": 1,
+      "situationId": 4,
+      "categoryId": 4,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/dbgfbdjcbbrhpkrhfvq9.png",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Medicare Card",
+      "isPaper": false,
+      "isDigital": false,
+      "access": "it is in the wallet",
+      "note": "test",
+      "customerId": 2,
+      "situationId": 1,
+      "categoryId": 1,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/gofcsvs8jsnpfbhkmccc.png"
+    }
+  ],
+  "documentLists": [
+    {
+      "id": 1,
+      "name": "Medicare Card",
+      "situationId": 1
+    },
+    {
+      "id": 2,
+      "name": "Medicaid Card",
+      "situationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Medicare Supplemental Plan Health Insurance Card",
+      "situationId": 1
+    },
+    {
+      "id": 4,
+      "name": "Prescription Insurance Card",
+      "situationId": 1
+    },
+    {
+      "id": 5,
+      "name": "Social Security Card",
+      "situationId": 1
+    },
+    {
+      "id": 6,
+      "name": "Primay Care doctor contact info",
+      "situationId": 1
+    },
+    {
+      "id": 7,
+      "name": "List of medications and supplements",
+      "situationId": 1
+    },
+    {
+      "id": 8,
+      "name": "Medical history",
+      "situationId": 1
+    },
+    {
+      "id": 9,
+      "name": "Medical power of attorney",
+      "situationId": 2
+    },
+    {
+      "id": 10,
+      "name": "Living Will",
+      "situationId": 2
+    },
+    {
+      "id": 11,
+      "name": "Untility/Water Bill",
+      "situationId": 2
+    },
+    {
+      "id": 12,
+      "name": "Untility/Gas Bill",
+      "situationId": 2
+    },
+    {
+      "id": 13,
+      "name": "Untility/Electrocity Bill",
+      "situationId": 2
+    },
+    {
+      "id": 14,
+      "name": "Untility/Internet Bill",
+      "situationId": 2
+    },
+    {
+      "id": 15,
+      "name": "Untility/Landline Bill",
+      "situationId": 2
+    },
+    {
+      "id": 16,
+      "name": "Untility/Cellphone Bill",
+      "situationId": 2
+    },
+    {
+      "id": 17,
+      "name": "Insurance permium Bill",
+      "situationId": 2
+    },
+    {
+      "id": 18,
+      "name": "Student loan payment",
+      "situationId": 2
+    },
+    {
+      "id": 19,
+      "name": "House loan payment",
+      "situationId": 2
+    },
+    {
+      "id": 19,
+      "name": "Car loan payment",
+      "situationId": 2
+    },
+    {
+      "id": 20,
+      "name": "List of family and friend contact",
+      "situationId": 2
     }
   ]
 }
