@@ -31,7 +31,10 @@ export const DocumentForm = () => {
     const { categories, getCategories } = useContext(CategoryContext)
     const { situations, getSituations } = useContext(SituationContext)
 
-    const [document, setDocument] = useState({})
+    const [document, setDocument] = useState({
+        isPaper: false,
+        isDigital:false
+    })
     const { documentId } = useParams();
 
     console.log(documentId)
@@ -88,7 +91,7 @@ export const DocumentForm = () => {
 
     const handeClickNewDocument = () => {
 
-        if (document.name === "" || document.access === "" || document.note === "") {
+        if (document.name === "" || document.access === "" ) {
             window.alert("Please full out name, access, or/and note section(s) in the form")
         } else {
             //disable the button - no extra clicks
@@ -100,6 +103,7 @@ export const DocumentForm = () => {
             const isPaper = JSON.parse(document.isPaper)
             const isDigital = JSON.parse(document.isDigital)
 
+            console.log(document.isPaper, "document.isPaper")
             document.situationId = situationId
             document.categoryId = categoryId
             document.isPaper = isPaper
