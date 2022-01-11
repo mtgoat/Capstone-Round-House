@@ -28,7 +28,7 @@ export const DocumentCard = ({document}) => {
           })
       }
     return (
-    <section className="document">
+    <section className="document" id={document.id}>
         <h3 className="document__name">Name: <b>{document.name}</b></h3>
 
         {document.isPaper? <div className="document__paper">Format: <b>paper copy</b></div>: <div className="document__digital">Format: <b>digital copy</b></div>}
@@ -124,7 +124,7 @@ export const DocumentCard3 = ({document}) => {
       <CardGroup>
         <Card>
            {document.imageURL === ""? <></>:<Card> <Card.Title>{document.name}</Card.Title>
-              <Card.Img variant="top" src={document.imageURL} className="card__images" /></Card> }
+              <Card.Img variant="top" src={document.imageURL} className="card__images" style={{ width: '15rem' }}/></Card> }
         </Card>
       </CardGroup>
     )

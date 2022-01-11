@@ -9,12 +9,7 @@ export const DocumentList = (props) => {
     console.log(props.id)
     const { documents, getDocuments } = useContext(DocumentContext)
 
-      // Empty dependency array - useEffect only runs after first render
-    useEffect (() => {
-        // console.log("DocumentList: useEffect - getDocuments")
-        getDocuments()
-    }, [])
-
+  // Empty dependency array - useEffect only runs after first render
  // useEffect dependency array with dependencies - will run if dependency changes (state)
   // searchTerms will cause a change
   useEffect (() => {
@@ -47,13 +42,7 @@ return (
 export const DocumentList2 = (props) => {
   console.log(props.id)
   const { documents, getDocuments } = useContext(DocumentContext)
-
     // Empty dependency array - useEffect only runs after first render
-  useEffect (() => {
-      // console.log("DocumentList: useEffect - getDocuments")
-      getDocuments()
-  }, [])
-
 // useEffect dependency array with dependencies - will run if dependency changes (state)
 // searchTerms will cause a change
 useEffect (() => {

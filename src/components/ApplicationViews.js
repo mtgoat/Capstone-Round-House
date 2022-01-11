@@ -13,7 +13,8 @@ import { DocumentSearchList } from "./search/DocumentSearchList";
 
 import { SituationProvider } from "./situations/SituationProvider";
 
-import { Testing } from "./suggestedDocuments/SuggestedDocumentList"
+import { DocumentListProvider } from "./documentLists/DocumentListProvider";
+import { DocumentListHome } from "./documentLists/DocumentListHome"
 
 export const ApplicationViews = () => {
 
@@ -22,14 +23,16 @@ export const ApplicationViews = () => {
         <SituationProvider>
             <CategoryProvider>
                 <CustomerProvider>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="documents" element={<Home />} />
-                        <Route path="documents/create/*" element={<DocumentForm />} />
-                        <Route path="documents/edit/:documentId/*" element={< DocumentForm />}/>
-                        <Route path="search" element={<><DocumentSearch /><DocumentSearchList /></>} />
-                        <Route path="suggested" element={<Testing />} />
-                    </Routes>
+                    <DocumentListProvider>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="documents" element={<Home />} />
+                            <Route path="documents/create/*" element={<DocumentForm />} />
+                            <Route path="documents/edit/:documentId/*" element={< DocumentForm />}/>
+                            <Route path="search" element={<><DocumentSearch /><DocumentSearchList /></>} />
+                            <Route path="suggested" element={<DocumentListHome />} />
+                        </Routes>
+                    </DocumentListProvider>
                 </CustomerProvider>
             </CategoryProvider>
         </SituationProvider>
