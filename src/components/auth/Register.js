@@ -40,7 +40,7 @@ export const Register = (props) => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                localStorage.setItem("react_Roundhouse_user", createdUser.id)
+                                localStorage.setItem("react_Roundhouse_user", JSON.stringify(createdUser))
                                 props.setLoggedin(true)
                                 navigate("/")
                             }

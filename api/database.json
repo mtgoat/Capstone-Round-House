@@ -2,15 +2,21 @@
   "customers": [
     {
       "id": 1,
+      "firstName": "Aki",
+      "lastName": "Endo",
+      "email": "aki@here.now"
+    },
+    {
+      "email": "squirrel@walnut.com",
       "firstName": "Squirrel",
       "lastName": "Walnut",
-      "email": "squirrel@walnut.com"
+      "id": 2
     },
     {
       "email": "cat@fish.com",
       "firstName": "Cat",
       "lastName": "Fish",
-      "id": 2
+      "id": 3
     }
   ],
   "situations": [
