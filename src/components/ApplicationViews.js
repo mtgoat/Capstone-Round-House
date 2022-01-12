@@ -14,7 +14,9 @@ import { DocumentSearchList } from "./search/DocumentSearchList";
 import { SituationProvider } from "./situations/SituationProvider";
 
 import { DocumentListProvider } from "./documentLists/DocumentListProvider";
-import { DocumentListHome } from "./documentLists/DocumentListHome"
+import { DocumentListHome } from "./documentLists/DocumentListHome";
+
+import { About } from "./about/About";
 
 export const ApplicationViews = () => {
 
@@ -31,6 +33,7 @@ export const ApplicationViews = () => {
                             <Route path="documents/edit/:documentId/*" element={< DocumentForm />}/>
                             <Route path="search" element={<><DocumentSearch /><DocumentSearchList /></>} />
                             <Route path="suggested" element={<DocumentListHome />} />
+                            <Route path="about" element={<About />} />
                         </Routes>
                     </DocumentListProvider>
                 </CustomerProvider>

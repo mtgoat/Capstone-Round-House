@@ -19,7 +19,7 @@ export const DocumentListHome = () => {
             <AccordionItem eventKey="1">
                 <AccordionHeader>Short-Term Medical Care Situation</AccordionHeader>
                 <AccordionBody>
-                    <DocumentListList id={1}/>
+                    <DocumentListList2 id={1}/>
                 </AccordionBody>
             </AccordionItem>
         </Accordion>
