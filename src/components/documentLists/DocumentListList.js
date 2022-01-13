@@ -51,8 +51,10 @@ export const DocumentListList2 = (props) => {
     // const { docNumber, setDocNumber } = useState ()
     // const { docListNumber, setDocListNumber } = useState ()
     
-    let getDocNum = documents.length
-    let getDocLstNum = documentLists.length
+    let getDocNum =   props.id===undefined ? documents.length: documents.filter(documentListOb => documentListOb.situationId === props.id).length
+
+    let getDocLstNum = props.id===undefined ? documentLists.length: documentLists.filter(documentListOb => documentListOb.situationId === props.id).length
+    
     // setDocNumber(getDocNum)
     // setDocListNumber(getDocLstNum)
 
@@ -64,11 +66,11 @@ export const DocumentListList2 = (props) => {
         <Table responsive striped bordered className="documentsList__table">
             <thead >
                 <tr>
-                    <th colSpan={3}><p>Total # of all the suggested docs below: {documentLists.length}</p>
+                    <th colSpan={3}><p>Total # of all the suggested docs below: {getDocLstNum}</p>
 
-                    <p>Total # of docs added: {documents.length} </p>
+                    <p>Total # of docs added: {getDocNum} </p>
                     
-                    <p>Percentage of the docs added: {percent}% </p>
+                    <p>Percentage of the docs added: {percent.toFixed(2)}% </p>
 
                     </th>
                     

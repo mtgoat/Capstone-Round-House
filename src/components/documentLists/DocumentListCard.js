@@ -31,7 +31,7 @@ console.log(documents,"documentList")
 
                 {documents.filter( doc => doc.name === documentList.name)
                 .map( doc =>{
-                   return <p> {doc.name} added to your account</p>
+                   return <div> {doc.name} added to your account</div>
                 }) }
 
             </td>

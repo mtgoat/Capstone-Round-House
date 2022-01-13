@@ -24,6 +24,7 @@ h6 {
 }
 
 p {
+  font-family: "Baloon", Arial, sans-serif;
   margin-bottom: 1.5em;
   color: #16130f;
   
@@ -34,5 +35,6 @@ strong {
 }
 
 address {
+  font-family: "Baloon", Arial, sans-serif;
   margin: 0 0 1.5em;
 }

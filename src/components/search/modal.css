@@ -1,0 +1,56 @@
+
+.modal__style {
+    background-color: rgb(194, 138, 117);
+    color: rgb(7, 29, 29);
+    animation-name: modal__backgroundColor;
+    animation-duration: 4s;
+}
+
+.modal__style__header {
+    background-color: rgb(194, 138, 117);
+    animation-name: modal__color;
+    animation-duration: 4s;
+}
+
+.modal__style__body {
+    background-color: rgb(194, 138, 117);
+    animation-name: modal__color;
+    animation-duration: 4s;
+}
+
+.modal__style__footer {
+    background-color: rgb(194, 138, 117);
+    animation-name: modal__color;
+    animation-duration: 4s;
+}
+
+@keyframes modal__color {
+    from {background-color:wheat;}
+    to {background-color:rgb(194, 138, 117);}
+  }
+
+@keyframes modal__backgroundColor {
+    from {background-color:rgb(194, 138, 117);}
+    to {background-color:wheat;}
+  }
+
+  .names{
+      margin: 1em;
+      text-align: center;
+      animation-name:modal__names;
+      animation-duration: 4s;
+  }
+
+  .message {
+    animation-name:modal__names;
+    text-align: center;
+    animation-duration: 4s;   
+  }
+  @keyframes modal__names {
+    from {color:rgb(41, 75, 75);}
+    to {color:wheat;}
+  }
+
+  .btn-secondary {
+    display: block;
+  }

@@ -18,8 +18,10 @@ class NavBar extends Component{
                     <Navbar.Brand href="/"><img src="\img\Logo.jpg" alt="logo"   className="d-inline-block align-top"/></Navbar.Brand>
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/documents/create/">Add New Document</Nav.Link>
-                    <Nav.Link href="/search">Search</Nav.Link>
                     <Nav.Link href="/suggested">Suggested List</Nav.Link>
+                    <Nav.Link href="/search">Search</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                    
                   </Nav>
                     <div className="navbar--howdy"><Welcome name={JSON.parse(localStorage.getItem('react_Roundhouse_user')).firstName} /></div> 
                     <Logout/>

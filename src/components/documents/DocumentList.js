@@ -53,7 +53,7 @@ useEffect (() => {
 
 return (
   <div className="documents">
-    <p>sorted by function?</p>
+    
     <Table responsive striped bordered className="documents__table">
        <thead >
           <tr>
@@ -63,7 +63,7 @@ return (
             <th>Note</th>
             <th>Situation</th>
             <th>Category</th>
-            <th>Rating</th>
+            <th>Importance Rating</th>
             <th>Edit/Release</th>
           </tr>
         </thead>

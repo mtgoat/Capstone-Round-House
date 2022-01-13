@@ -2,15 +2,21 @@
   "customers": [
     {
       "id": 1,
+      "firstName": "Aki",
+      "lastName": "Endo",
+      "email": "aki@here.now"
+    },
+    {
+      "email": "squirrel@walnut.com",
       "firstName": "Squirrel",
       "lastName": "Walnut",
-      "email": "squirrel@walnut.com"
+      "id": 2
     },
     {
       "email": "cat@fish.com",
       "firstName": "Cat",
       "lastName": "Fish",
-      "id": 2
+      "id": 3
     }
   ],
   "situations": [
@@ -74,7 +80,7 @@
       "situationId": 1,
       "categoryId": 1,
       "rating": 3,
-      "imageURL": ""
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/gofcsvs8jsnpfbhkmccc.png"
     },
     {
       "id": 3,
@@ -97,14 +103,14 @@
       "access": "in the desk drawer and also in my google doc",
       "note": "sign in with my gmail ",
       "customerId": 1,
-      "situationId": 4,
+      "situationId": 3,
       "categoryId": 4,
-      "rating": 1,
-      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png"
+      "rating": 3,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1642001232/qn5ratr1qziirfcbmo0e.png"
     },
     {
       "id": 5,
-      "name": "Pet Trust document",
+      "name": "Cat Trust document",
       "isPaper": true,
       "isDigital": true,
       "access": "in the desk drawer and also in my google doc",
@@ -113,7 +119,7 @@
       "situationId": 4,
       "categoryId": 4,
       "rating": 4,
-      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641918988/nmhvvrwowvec1uysjwfo.png"
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/nmhvvrwowvec1uysjwfo.png"
     },
     {
       "name": "Testing",
@@ -125,21 +131,21 @@
       "situationId": 4,
       "categoryId": 4,
       "rating": 5,
-      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/twoicbfpnscjucq5rosa.png",
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641585362/nmhvvrwowvec1uysjwfo.png",
       "id": 6
     },
     {
-      "name": "Testing",
+      "id": 7,
+      "name": "Utility/Internet Bills",
       "isPaper": true,
       "isDigital": true,
-      "access": "Test",
-      "note": "Test",
+      "access": "in the filing cabinet",
+      "note": "No online account setup",
       "customerId": 1,
-      "situationId": 4,
-      "categoryId": 4,
-      "rating": 5,
-      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/dbgfbdjcbbrhpkrhfvq9.png",
-      "id": 7
+      "situationId": 2,
+      "categoryId": 2,
+      "rating": 2,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1642001661/jhzh80eyfglbpceymhqk.png"
     },
     {
       "id": 8,
@@ -153,6 +159,19 @@
       "categoryId": 1,
       "rating": 5,
       "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/gofcsvs8jsnpfbhkmccc.png"
+    },
+    {
+      "name": "Test",
+      "isPaper": true,
+      "isDigital": true,
+      "access": "Filing cabinet",
+      "note": "sign in with my gmail ",
+      "customerId": 1,
+      "situationId": 3,
+      "categoryId": 1,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1642018792/ycvyn4zemdgudxydtbnq.png",
+      "id": 9
     }
   ],
   "documentLists": [
@@ -208,37 +227,37 @@
     },
     {
       "id": 11,
-      "name": "Untility/Water Bill",
+      "name": "Utility/Water Bills",
       "situationId": 2
     },
     {
       "id": 12,
-      "name": "Untility/Gas Bill",
+      "name": "Utility/Gas Bills",
       "situationId": 2
     },
     {
       "id": 13,
-      "name": "Untility/Electrocity Bill",
+      "name": "Utility/Electrocity Bills",
       "situationId": 2
     },
     {
       "id": 14,
-      "name": "Untility/Internet Bill",
+      "name": "Utility/Internet Bills",
       "situationId": 2
     },
     {
       "id": 15,
-      "name": "Untility/Landline Bill",
+      "name": "Utility/Landline Bills",
       "situationId": 2
     },
     {
       "id": 16,
-      "name": "Untility/Cellphone Bill",
+      "name": "Utility/Cellphone Bills",
       "situationId": 2
     },
     {
       "id": 17,
-      "name": "Insurance permium Bill",
+      "name": "Insurance permium Bills",
       "situationId": 2
     },
     {
@@ -260,6 +279,16 @@
       "id": 20,
       "name": "List of family and friend contact",
       "situationId": 2
+    },
+    {
+      "id": 21,
+      "name": "List of pws",
+      "situationId": 4
+    },
+    {
+      "id": 22,
+      "name": "Will",
+      "situationId": 3
     }
   ]
 }
