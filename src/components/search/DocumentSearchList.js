@@ -58,7 +58,7 @@ return (
           aria-labelledby="contained-modal-title-vcenter"
           centered>
         <Modal.Body closeButton className="modal__style__body">
-          <h2 className="names">Sarah, Jordan, Heaven, Steven, Andy, Cameron, Tommy and everyone</h2>
+          <h2 className="names">Sarah, Jordan, Heaven, Steven, Andy, Cameron, Tommy, Courtney and everyone</h2>
           
           <h2 className="message">Thank you!!!!! ありがとう!!!!! for all your help! </h2> 
           <Button className="btn-secondary" onClick={handleClose}centered >Close</Button>

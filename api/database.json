@@ -103,7 +103,7 @@
       "access": "in the desk drawer and also in my google doc",
       "note": "sign in with my gmail ",
       "customerId": 1,
-      "situationId": 4,
+      "situationId": 3,
       "categoryId": 4,
       "rating": 3,
       "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1642001232/qn5ratr1qziirfcbmo0e.png"
@@ -159,6 +159,19 @@
       "categoryId": 1,
       "rating": 5,
       "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1641845557/gofcsvs8jsnpfbhkmccc.png"
+    },
+    {
+      "name": "Test",
+      "isPaper": true,
+      "isDigital": true,
+      "access": "Filing cabinet",
+      "note": "sign in with my gmail ",
+      "customerId": 1,
+      "situationId": 3,
+      "categoryId": 1,
+      "rating": 5,
+      "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1642018792/ycvyn4zemdgudxydtbnq.png",
+      "id": 9
     }
   ],
   "documentLists": [
@@ -266,6 +279,16 @@
       "id": 20,
       "name": "List of family and friend contact",
       "situationId": 2
+    },
+    {
+      "id": 21,
+      "name": "List of pws",
+      "situationId": 4
+    },
+    {
+      "id": 22,
+      "name": "Will",
+      "situationId": 3
     }
   ]
 }
