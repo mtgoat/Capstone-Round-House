@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { DocumentContext } from "../documents/DocumentProvider";
 // import { Form, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export const DocumentSearch = () => {
 
@@ -9,11 +10,15 @@ export const DocumentSearch = () => {
 
     return ( 
       <>
-      <p>Document search here:</p>
-      <input type="text"
-        className="input--wide"
-        onKeyUp={(event) => setSearchTerms(event.target.value)}
-        placeholder="Search for an document... " />
+      <div className="search__form">
+         <input type="search"
+        className="form-control rounded"
+        placeholder="Search for an document... " onChange={(event) => {setSearchTerms (event.target.value)
+          console.log("search term", event.target.value)}}/>
+        <Button  className="btn-danger" onClick={(event) => {setSearchTerms(event.target.value)
+       console.log("search term", event.target.value)  }}
+        > Search </Button>
+      </div>
       </>
         // <Form>
         //       {/* <Row className="align-items-center"> */}

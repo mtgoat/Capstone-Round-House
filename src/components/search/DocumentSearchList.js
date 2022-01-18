@@ -17,12 +17,6 @@ export const DocumentSearchList = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-      // Empty dependency array - useEffect only runs after first render
-    useEffect (() => {
-        // console.log("DocumentList: useEffect - getDocuments")
-        getDocuments()
-    }, [])
-
 
  // useEffect dependency array with dependencies - will run if dependency changes (state)
   // searchTerms will cause a change
