@@ -189,10 +189,10 @@ console.log("document.categoryId",document.categoryId)
             {/* this is for Ispaper*/}
             <Form.Group className="form-group">
                 <Row>
-                    <Col xs={4}>
+                    <Col xs={3}>
                         <Form.Label htmlFor="isPaper"> <h6>Do you have a paper copy?</h6> </Form.Label>
                     </Col>
-                    <Col xs={8} id="inline"> 
+                    <Col xs={9} id="inline"> 
                     <h6 > If yes, check this box
                     <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isPaper" name="isPaper" value={document.isPaper}></input>   </h6>
                     </Col>
@@ -202,10 +202,10 @@ console.log("document.categoryId",document.categoryId)
 
             <Form.Group className="form-group">
                 <Row>
-                    <Col xs={4}> 
+                    <Col xs={3}> 
                     <Form.Label htmlFor="isDigital"> <h6>Do you have a digital copy? </h6></Form.Label>
                     </Col>
-                    <Col xs={8}>
+                    <Col xs={9}>
                     <h6 > If yes, check this box  
                          <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isDigital" name="isDigital" value={document.isDigital}></input>  </h6>
                     </Col>

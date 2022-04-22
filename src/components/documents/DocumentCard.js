@@ -98,8 +98,8 @@ export const DocumentCard2 = ({document}) => {
 
       <td><Rating value={ratingS} name="read-only" readOnly></Rating></td>
 
-      <td><Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
-      <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button></td>
+      <td><div><Button id="edit-button" className=" btn-primary" onClick={()=> {navigate(`/documents/edit/${document.id}`)}}>Edit</Button>{' '}
+      <Button id="detele-button" className=" btn-secondary" onClick={handleRelease}>Release</Button></div></td>
 
     </tr>
   

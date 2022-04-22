@@ -94,3 +94,9 @@ address {
       
       text-align: center;
     }
+    #inline{
+      display: inline-block;
+    }
+    .form-group{
+      padding: 0.4rem;
+    }
