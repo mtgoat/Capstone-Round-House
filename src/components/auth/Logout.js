@@ -22,7 +22,7 @@ export const Logout = (props) =>{
 
     return (
         <>
-        <Button id="logout-button" className="btn-success" onClick={handleLogout}>Log Out</Button>
+        <Button id="logout-button" className="btn-success" onClick={handleLogout} size="sm">Log Out</Button>
         </>
     )
 }

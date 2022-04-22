@@ -14,6 +14,7 @@ export const Home = () => {
 
 
    return ( 
+       <div  id="bgGrad"> 
     <Container>
             {/* <PDFFIle /> */}
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -79,6 +80,8 @@ export const Home = () => {
             </Tab.Container>
 
     </Container>
+    <div id="sizeControl"></div>
+    </div>
    )
 }
 

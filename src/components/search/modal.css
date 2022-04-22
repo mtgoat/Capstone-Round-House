@@ -1,4 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
 
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #0b0b0c;
+  font-family: "Baloon", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Ballon", serif;
+  letter-spacing: 2px;
+}
+
+p {
+  font-family: "Baloon", Arial, sans-serif;
+  margin-bottom: 1.5em;
+  color: #16130f;
+  
+}
+
+strong {
+  font-weight: bold;
+}
+
+address {
+  font-family: "Baloon", Arial, sans-serif;
+  margin: 0 0 1.5em;
+}
 .modal__style {
     background-color: rgb(194, 138, 117);
     color: rgb(7, 29, 29);

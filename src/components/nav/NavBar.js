@@ -9,13 +9,13 @@ class NavBar extends Component{
   render () {
     return (
       <>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="gray" variant="light">
             <Container>
             
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="me-auto">
-                    <Navbar.Brand href="/"><img src="\img\Logo.jpg" alt="logo"   className="d-inline-block align-top"/></Navbar.Brand>
+                    <Navbar.Brand href="/"><img src="\img\Logo4.png"  alt="logo" style={{ width: '5rem', height: '5rem' }}  className="d-inline-block align-top"/></Navbar.Brand>
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/documents/create/">Add New Document</Nav.Link>
                     <Nav.Link href="/suggested">Suggested List</Nav.Link>
