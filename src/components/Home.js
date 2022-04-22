@@ -80,7 +80,6 @@ export const Home = () => {
             </Tab.Container>
 
     </Container>
-    <div id="sizeControl"></div>
     </div>
    )
 }

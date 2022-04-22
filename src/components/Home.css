@@ -39,11 +39,9 @@ address {
   margin: 0 0 1.5em;
 }
 #bgGrad{
-  background: linear-gradient(70deg, rgb(162, 162, 245), rgb(249, 177, 52));
+  background: linear-gradient(70deg,rgb(249, 177, 52) rgb(162, 162, 245));
   margin: -13px;
-  height: auto;
+  min-height: 100vh;
   border-radius: 1rem;
-}
-#sizeControl{
-  height:300px;
+  
 }
