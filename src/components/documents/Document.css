@@ -17,3 +17,14 @@
     height:180;
     
   }
+  .documentForm{
+    padding: 1rem;
+    background-color: rgb(177, 194, 188);
+    border-radius: 15px;
+  }
+  #inline{
+    display: inline-block;
+  }
+  .form-group{
+    padding: 0.4rem;
+  }

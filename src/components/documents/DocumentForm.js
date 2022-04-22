@@ -6,10 +6,12 @@ import { CategoryContext } from "../categories/CategoryProvider";
 import "./Document.css";
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Table } from "react-bootstrap";
-
+import Form from 'react-bootstrap/Form'
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export const DocumentForm = () => {
     //wait for data before button is active
@@ -164,107 +166,142 @@ export const DocumentForm = () => {
     }, [])
 console.log("document.categoryId",document.categoryId)
     return (
+        <>    
+       
+        
+        <Form className="documentForm" >
+        
+ {documentId ? <Form.Label><h2 className="documentForm__title">Edit document information</h2></Form.Label> :<Form.Label> <h2 className="documentForm__title">New Document Register</h2></Form.Label>}
 
-        <form className="documentForm">
-            {documentId ? <h2 className="documentForm__title">Edit document information</h2> : <h2 className="documentForm__title">New Document Register</h2>}
+            <Form.Group className="mb-3 form-group" controlId="name">
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="Name">Document Name:</label>
+                <Row>
+                    <Col xs={3}>
+                    <Form.Label htmlFor="Name"><h6>Document Name:</h6></Form.Label>
+                    </Col >
+                    
+                    <Col xs={9}>
                     <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Document Name" value={document.name} />
-                </div>
-            </fieldset>
-
+                    </Col>
+                </Row>
+            </Form.Group>           
+            
             {/* this is for Ispaper*/}
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="isPaper">Do you have a paper copy? If yes, check this box </label>
-                    <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isPaper" name="isPaper" value={document.isPaper}></input>
-                    </div>
-            </fieldset>  
+            <Form.Group className="form-group">
+                <Row>
+                    <Col xs={4}>
+                        <Form.Label htmlFor="isPaper"> <h6>Do you have a paper copy?</h6> </Form.Label>
+                    </Col>
+                    <Col xs={8} id="inline"> 
+                    <h6 > If yes, check this box
+                    <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isPaper" name="isPaper" value={document.isPaper}></input>   </h6>
+                    </Col>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="isPaper">Do you have a digital copy? If yes, check this box </label>
-                    <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isDigital" name="isDigital" value={document.isDigital}></input>
-                </div>
-            </fieldset>
+                </Row>
+            </Form.Group>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="Name">Document access:</label>
-                    <input type="text" id="access" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Document access" value={document.access} />
-                </div>
-            </fieldset>
+            <Form.Group className="form-group">
+                <Row>
+                    <Col xs={4}> 
+                    <Form.Label htmlFor="isDigital"> <h6>Do you have a digital copy? </h6></Form.Label>
+                    </Col>
+                    <Col xs={8}>
+                    <h6 > If yes, check this box  
+                         <input onChange={handleCheckBoxControlledInputChange} type="checkbox" id="isDigital" name="isDigital" value={document.isDigital}></input>  </h6>
+                    </Col>
+                </Row>
+            </Form.Group>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="Name">Document note:</label>
-                    <input type="text" id="note" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Document note" value={document.note} />
-                </div>
-            </fieldset>
+            <Form.Group className="form-group">
+                <Row>
+                <Col xs={3}><Form.Label htmlFor="access"><h6> Document access:</h6></Form.Label>
+                </Col>
+                <Col xs={9}>
+                <input type="text" id="access" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Document access" value={document.access} />
+                    </Col>
+                </Row>
+            </Form.Group>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="situation">Choose a situation: </label>
-                    <select onChange={handleControlledInputChange} value={document.situationId} name="situationId" id="situationId" className="form-control">
-                        <option value="0">Select a situation</option>
+            <Form.Group className="form-group">
+                <Row>
+                <Col xs={3}><Form.Label htmlFor="note"><h6> Document note:</h6></Form.Label>
+                </Col>
+                <Col xs={9}>
+                <input type="text" id="note" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Document note" value={document.note} />
+                    </Col>
+                </Row>
+            </Form.Group>
+
+            <Form.Group className="form-group">
+                <Row>
+                <Col xs={3}><Form.Label htmlFor="situation"><h6> Choose a situation:</h6></Form.Label>
+                </Col>
+                <Col xs={9}>
+                     <Form.Select onChange={handleControlledInputChange} value={document.situationId} name="situationId" id="situationId" className="form-control">
+                        <option value="0">Select a situation by clicking here</option>
                         {situations.map(l => (
                             <option key={l.id} value={l.id} >
                                 {l.name}
                             </option>
                         ))}
-                    </select>
-                </div>
-            </fieldset>
-   
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="category">Choose a category: </label>
-                    <select onChange={handleControlledInputChange} value={document.categoryId} name="categoryId" id="categoryId" className="form-control">
-                        <option value="0">Select a category</option>
+                    </Form.Select>
+                </Col>
+                </Row>    
+            </Form.Group>
+
+            <Form.Group className="form-group">
+                <Row>
+                <Col xs={3}><Form.Label htmlFor="category"><h6> Choose a category:</h6></Form.Label>
+                </Col>
+                <Col xs={9}>
+                     <Form.Select  onChange={handleControlledInputChange} value={document.categoryId} name="categoryId" id="categoryId" className="form-control">
+                     <option value="0">Select a category by clicking here</option>
                         {categories.map(l => (
                             <option key={l.id} value={l.id} >
                                 {l.name}
                             </option>
                         ))}
-                    </select>
-                </div>
-            </fieldset>
+                    </Form.Select>
+                </Col>
+                </Row>    
+            </Form.Group>
+   
+                
+            <Form.Group  className="form-group">
+                <Row>
+                    <Col xs={3}>
+                        <Form.Label><h6>Upload an image file</h6></Form.Label>
+                    </Col>
+                    <Col xs={9}>  <input type="file" id="imageURL"  onChange ={(e)=> setImage(e.target.files[0])}></input>
+                    <Button id="upload-button" className="btn-success" onClick={uploadImage} > <h6>Upload an image</h6> </Button>
+                    </Col>
+                </Row>
+            </Form.Group>
 
-            <fieldset>
-                <div>
-
-                    <input type="file" id="imageURL"  onChange ={(e)=> setImage(e.target.files[0])}></input>
-                    <Button id="upload-button" className="btn-success" onClick={uploadImage} >Upload an image</Button>
-                    
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <Box
-                    sx={{
-                        '& > legend': { mt: 2 },
-                    }}
-                >
-                    <Typography component="legend">Importace Rating</Typography>
+            <Form.Group  className="form-group">
+                <Row>
+                     
+                    <Typography component="legend"><h6> Importance Rating</h6></Typography>
                     <Rating
-                        name="Importace Rating"
+                        name="Importance Rating"
                         value={ratingS}
                         onChange={handleControlledScoreInputChange}
                     />
-                </Box>
-            </fieldset>
+             
+                </Row>
+               
+            </Form.Group>
 
 
-            <Button className="btn btn-primary"
+            <Button className="btn btn-primary form-group"
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form and refreshing the page
                     handeClickNewDocument()
                 }}>
                 {documentId ? <> Update information</> : <>Save New Document Information</>}
             </Button>
-        </form>
+        </Form>
+        </>
     )
 }
 
