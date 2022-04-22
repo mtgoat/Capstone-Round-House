@@ -168,7 +168,7 @@ console.log("document.categoryId",document.categoryId)
     return (
         <>    
        
-        
+        <div id="bgGrad">
         <Form className="documentForm" >
         
  {documentId ? <Form.Label><h2 className="documentForm__title">Edit document information</h2></Form.Label> :<Form.Label> <h2 className="documentForm__title">New Document Register</h2></Form.Label>}
@@ -278,7 +278,7 @@ console.log("document.categoryId",document.categoryId)
                 </Row>
             </Form.Group>
 
-            <Form.Group  className="form-group">
+            <Form.Group  className="form-group2">
                 <Row>
                      
                     <Typography component="legend"><h6> Importance Rating</h6></Typography>
@@ -301,7 +301,7 @@ console.log("document.categoryId",document.categoryId)
                 {documentId ? <> Update information</> : <>Save New Document Information</>}
             </Button>
         </Form>
-        </>
+        </div> </>
     )
 }
 

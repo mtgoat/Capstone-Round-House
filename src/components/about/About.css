@@ -39,8 +39,17 @@ address {
   margin: 0 0 1.5em;
 }
 
-#bgGrad{
+#bgGrad__about{
   background: linear-gradient(70deg, rgb(162, 162, 245), rgb(249, 177, 52));
-  margin: -13px;
+  padding: 10rem;
   height: auto;
+  border-radius: 1rem;
+}
+
+.about-blocks__title{
+  font-style: bold;
+  text-align: center;
+}
+.about-blocks__content{
+  
 }

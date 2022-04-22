@@ -4,10 +4,11 @@ import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 import { DocumentListList, DocumentListList2 } from './DocumentListList';
-
+import "../documents/Document.css";
 export const DocumentListHome = () => {
 
     return (
+        <div id='bgGrad'>
         <Accordion defaultActiveKey={['0']} alwaysOpen>
             <AccordionItem eventKey="0">
                 <AccordionHeader>Suggested documents for all the situations</AccordionHeader>
@@ -45,5 +46,7 @@ export const DocumentListHome = () => {
                 </AccordionBody>
             </AccordionItem>
         </Accordion>
+        <div id="sizeControl"></div>
+        </div>
     )
 }

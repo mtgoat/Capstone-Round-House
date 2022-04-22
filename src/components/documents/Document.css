@@ -57,3 +57,40 @@ address {
     height:180;
     
   }
+  .form-group2{
+    margin: 0.5rem;
+  }
+  #bgGrad, .accordion-item{
+    background: linear-gradient(70deg, rgb(162, 162, 245), rgb(249, 177, 52));
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: -13px;
+    height: auto;
+  }
+  #sizeControl{
+    height:100px;
+  }
+  /* this is for the search list */
+  #sizeControl2{
+    height:400px;
+  }
+
+  #content{
+    position:absolute;
+    top:50%;
+    left:45%;
+    width :200px;
+    height:200px;
+    margin-left:-100px;
+    margin-top:-100px;
+    }
+
+    .input__wide{
+      height:40px; 
+      width:300px;
+      border-radius: 1rem;
+    }
+    .input__title{
+      
+      text-align: center;
+    }
