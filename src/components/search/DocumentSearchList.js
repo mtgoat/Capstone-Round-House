@@ -6,7 +6,8 @@ import "../documents/Document.css";
 import { Button, Table, Modal, ModalFooter, Row, Col, Card, CardGroup } from "react-bootstrap";
 import ModalHeader from "react-bootstrap/esm/ModalHeader";
 import "./modal.css" 
-//to do - edit line 
+
+
 export const DocumentSearchList = () => {
     const { documents, getDocuments, searchTerms } = useContext(DocumentContext)
 
@@ -47,7 +48,7 @@ export const DocumentSearchList = () => {
   console.log("this is filteredDocuments", filteredDocuments)
 return (
   <>
-    <div className="documents">
+    <div class="documents__result">
 
    {filteredDocuments === undefined ? <></> : filteredDocuments.map(document => {
         return <DocumentCard key={document.id} document={document} />

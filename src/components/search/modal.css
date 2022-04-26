@@ -93,5 +93,8 @@ address {
   .btn-secondary {
     display: block;
   }
+  #bgGrad__searchList{
+    background: linear-gradient(70deg,rgb(249, 177, 52) rgb(162, 162, 245));
+    border-radius: 1rem;
+  }
 
-  

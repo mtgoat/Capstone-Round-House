@@ -172,19 +172,6 @@
       "rating": 5,
       "imageURL": "http://res.cloudinary.com/newforce-cohort5/image/upload/v1642018792/ycvyn4zemdgudxydtbnq.png",
       "id": 9
-    },
-    {
-      "id": 10,
-      "name": "AAA Card",
-      "isPaper": true,
-      "isDigital": false,
-      "access": "Desk in the office",
-      "note": "",
-      "customerId": 1,
-      "situationId": 4,
-      "categoryId": 4,
-      "rating": 3,
-      "imageURL": ""
     }
   ],
   "documentLists": [

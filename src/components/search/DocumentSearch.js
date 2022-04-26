@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { DocumentContext } from "../documents/DocumentProvider";
-// import { Form, Col } from "react-bootstrap";
+import "./modal.css";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -10,7 +10,7 @@ export const DocumentSearch = () => {
 //react bootstrap classname.my = margin 
 
     return ( 
-      <div id="bgGrad">
+      <div id="bgGrad__searchList">
         <div id="content">
           
               <p className="input__title">Document search here:</p>
@@ -20,9 +20,7 @@ export const DocumentSearch = () => {
         onKeyUp={(event) => setSearchTerms(event.target.value)}
         placeholder="Search for an document... " />
         
-    </div>
- 
-        <div id="sizeControl2"></div>
+       </div>
       </div>
         // <Form>
         //       {/* <Row className="align-items-center"> */}

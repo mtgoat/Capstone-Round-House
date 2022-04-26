@@ -77,7 +77,10 @@ address {
   height: auto;
 }
   /* this is for the search list */
- 
+  #bgGrad__searchList{
+    background: linear-gradient(70deg,rgb(249, 177, 52) rgb(162, 162, 245));
+    border-radius: 1rem;
+  }
 
   #content{
     position:absolute;
@@ -98,6 +101,15 @@ address {
       
       text-align: center;
     }
+
+    .documents__result{
+       margin-top:180px;
+      width: 30vw;
+      margin-left: 26rem; 
+     
+    }
+  
+    
     #inline{
       display: inline-block;
     }
